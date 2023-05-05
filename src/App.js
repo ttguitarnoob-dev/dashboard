@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn to poop
+          Learn to poop even better
         </a>
       </header>
     </div>
