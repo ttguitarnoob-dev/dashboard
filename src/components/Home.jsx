@@ -2,7 +2,9 @@
 
 export default function Home() {
     return <ul>
-        <li><button><a href="/wiki">Research Things!</a></button></li>
-        <li><button><a href="/poke">Pokedex!</a></button></li>
+        <li><a href="/wiki"><button>Research Things!</button></a></li>
+        <li><a href="/poke"><button>Pokedex!</button></a></li>
+        <li><a href="/abcya"><button>ABCya!</button></a></li>
     </ul>
+    
 }
