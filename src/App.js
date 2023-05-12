@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import Wiki from './components/Wiki';
 import Poke from './components/Poke';
-import Abcya from './components/Abcya';
+import Pbs from './components/Pbs';
 
 function App() {
   let Component
@@ -22,7 +22,7 @@ function App() {
       Component = <Poke />
       break
     case "/abcya":
-      Component = <Abcya />
+      Component = <Pbs />
   }
   return (
     <>
