@@ -1,5 +1,6 @@
 body {
   background-image: url("../public/pokeimage.jpg");
+  background-repeat: no-repeat;
 }
 
 .App {
@@ -34,6 +35,40 @@ body {
 
 }
 
+button{
+  background-color: rgb(0, 255, 238);
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  border: solid 2px rgb(0, 17, 255);
+}
 
+.go-home {
+  
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  border: solid 2px rgb(21, 0, 255);
+}
 
+.main-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10vh;
+}
 
+li {
+  display: inline;
+}
+
+.main-buttons button {
+  margin: 50px;
+  height: 80px;
+  border-radius: 30px;
+}
+
+iframe {
+  border-radius: 40px;
+  border: solid 7px rgb(255, 0, 200);
+}

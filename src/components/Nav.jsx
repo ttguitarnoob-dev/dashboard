@@ -4,7 +4,7 @@ export default function Nav() {
 
             <h1>HazelNet</h1>
             <div className="home-button">
-                <a href="/home"><button>Go Home</button></a>
+                <a href="/home"><button className="go-home">Go Home</button></a>
             </div>
         </div>
     </nav>
