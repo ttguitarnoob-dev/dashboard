@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+
+
 body {
   background-image: url("../public/pokeimage.jpg");
   background-repeat: no-repeat;
+  margin: 0 auto;
+  font-family: 'Lakki Reddy', cursive;
+}
+
+h1 {
+  
+  font-size: 30px;
+  color: rgb(0, 255, 13);
 }
 
 .App {
@@ -41,6 +52,15 @@ button{
   padding: 10px;
   width: 200px;
   border: solid 2px rgb(0, 17, 255);
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 20px;
+}
+
+button:hover {
+  /* background-color: #ff00b3; */
+  cursor: pointer;
+  transform: scale(1.1);
+  border: solid 4px pink;
 }
 
 .go-home {
@@ -66,9 +86,16 @@ li {
   margin: 50px;
   height: 80px;
   border-radius: 30px;
+  border: solid 5px rgb(0, 17, 255);
 }
 
 iframe {
   border-radius: 40px;
   border: solid 7px rgb(255, 0, 200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 83vh;
+  width: 99%;
 }
