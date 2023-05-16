@@ -4,14 +4,7 @@ export default function Pbs(){
             
  
 <body>
-  <iframe
-    id="station-module"
-    src="https://pbskids.org/video/module/Station-Letters"
-    allow="encrypted-media"
-    allowfullscreen
-    height="600px"
-    width="100%"
-  ></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gsvS2M5knOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </body>
         </div>
     )

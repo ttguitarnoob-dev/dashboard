@@ -21,7 +21,7 @@ function App() {
     case "/poke":
       Component = <Poke />
       break
-    case "/abcya":
+    case "/youtube":
       Component = <Pbs />
   }
   return (

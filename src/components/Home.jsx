@@ -5,7 +5,7 @@ export default function Home() {
         <ul>
             <li><a href="/wiki"><button>Research Things!</button></a></li>
             <li><a href="/poke"><button>Pokedex!</button></a></li>
-            <li><a href="/abcya"><button>PBS Kids!</button></a></li>
+            <li><a href="/youtube"><button>Video of the Day!</button></a></li>
         </ul>
     </div>
 }
