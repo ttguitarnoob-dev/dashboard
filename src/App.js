@@ -4,7 +4,8 @@ import Home from './components/Home';
 import Nav from './components/Nav';
 import Wiki from './components/Wiki';
 import Poke from './components/Poke';
-import Pbs from './components/Pbs';
+import Yt from './components/Yt';
+// import Prodigy from './components/Prodigy';
 
 function App() {
   let Component
@@ -22,7 +23,11 @@ function App() {
       Component = <Poke />
       break
     case "/youtube":
-      Component = <Pbs />
+      Component = <Yt />
+      break
+    // case "/prodigy":
+    //   Component = <Prodigy />
+    //   break
   }
   return (
     <>
