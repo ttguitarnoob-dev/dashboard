@@ -1,6 +1,6 @@
 
 
-export default function Home() {
+export default function Hazel() {
     return <div className="main-buttons">
         <ul>
             <li><a href="/wiki"><button>Research Things!</button></a></li>
