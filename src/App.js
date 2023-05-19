@@ -6,6 +6,7 @@ import Wiki from './components/Wiki';
 import Poke from './components/Poke';
 import Yt from './components/Yt';
 import TravNav from './components/TravNav';
+import Trav from './components/Trav';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   let Navigation
   switch (window.location.pathname) {
     case "/":
-      Component = <Hazel />
+      Component = <Trav />
       Navigation = <TravNav />
       break
     case "/hazel":

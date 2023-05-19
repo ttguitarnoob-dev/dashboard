@@ -1,5 +1,5 @@
 export default function HazelNav() {
-    return <nav className="App-header">
+    return <nav className="hazel-header">
         <div className="nav-items">
 
             <h1>HazelNet</h1>
