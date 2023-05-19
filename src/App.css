@@ -112,6 +112,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
   margin: 10vh;
 }
 
@@ -147,4 +148,31 @@ iframe {
   width: 15vw;
   border: solid 2px rgb(34, 32, 56);
   border-radius: 2rem;
+  margin-right: 1rem;
+}
+
+.dash-items:hover {
+  transform: scale(1.2);
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+a {
+  color: rgb(141, 143, 182);
+}
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.trav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
