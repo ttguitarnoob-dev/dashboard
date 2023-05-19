@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 
 
 
@@ -7,47 +7,49 @@ export default function Trav() {
 
 
 
-//fetch pihole data
-const url = 'http://10.24.24.112/admin/api.php?summary&auth=ca070dc73175206fd289ecf8e992614289b7db7a046f1f71c709c77f704008e3'
-const [pihole, setPihole] = useState([])
+    //fetch pihole data
+    const url = 'http://10.24.24.112/admin/api.php?summary&auth=ca070dc73175206fd289ecf8e992614289b7db7a046f1f71c709c77f704008e3'
+    const [pihole, setPihole] = useState([])
 
 
-async function fetchPihole(myurl) {
-    console.log('url', myurl)
-    const response = await fetch(myurl, {mode: "no-cors"})
-    console.log('response', response)
-    const data = await response.json()
-    console.log('data', data)
-    setPihole(data)
-}
+    async function fetchPihole(myurl) {
+        console.log('url', myurl)
+        const response = await fetch(myurl, { mode: "no-cors" })
+        console.log('response', response)
+        const data = await response.json()
+        console.log('data', data)
+        setPihole(data)
+    }
 
-useEffect(() => {
-    fetchPihole(url)
-}, [])
+    useEffect(() => {
+        fetchPihole(url)
+    }, [])
 
-console.log('pismell', pihole)
+    console.log('pismell', pihole)
 
 
-//render
+    //render
 
     return <div className="trav-page">
-    
-    
-    <div className="main-buttons">
-        <ul className="trav-buttons">
-            <li>
-                <a href="https://proxmox.ttguitarnoob.cloud"><div className="dash-items">
-                    <h2>Proxmox</h2>
-                </div></a>
-            </li>
-            <li>
-                <a href="https://proxmox.ttguitarnoob.cloud"><div className="dash-items">
-                    <h2>Proxmox</h2>
-                </div></a>
-            </li>
-            
-        </ul>
+
+
+        <div className="main-buttons">
+            <ul className="trav-buttons">
+                <li>
+                    <a href="https://proxmox.ttguitarnoob.cloud" target="blank"><div className="dash-items">
+                        <div className="button-content">
+                            {/* <i data-src="../public/Icons/proxmox_logo_icon_144960.svg"></i> */}
+                            <svg className="button-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                <path fill="#bcc4f0" d="M6.573 2.432c-1.453 0.74-1.453 0.854-0.094 2.375 7.536 8.391 9.339 10.375 9.474 10.375 0.188 0.021 10.63-11.391 10.745-11.734 0.047-0.094-0.276-0.417-0.693-0.714-0.552-0.417-1.151-0.578-2.281-0.625-2.12-0.135-2.859 0.323-5.49 3.276-1.198 1.333-2.214 2.443-2.214 2.443-0.021 0-1.010-1.083-2.188-2.396s-2.536-2.63-2.995-2.885c-1.063-0.599-3.229-0.646-4.271-0.115zM1.729 5.823c-1.13 0.438-1.729 0.854-1.729 1.172 0 0.161 1.776 2.24 3.922 4.615 2.167 2.375 3.917 4.359 3.917 4.401 0 0.047-1.776 2.031-3.922 4.406-2.167 2.396-3.896 4.495-3.87 4.677 0.115 0.625 2.005 1.411 3.385 1.411 2.24-0.026 2.745-0.417 7.474-5.604 2.375-2.604 4.307-4.818 4.307-4.891 0-0.089-1.911-2.255-4.26-4.839-3.068-3.344-4.568-4.844-5.281-5.167-1.083-0.531-2.833-0.62-3.943-0.182zM26.354 5.984c-0.672 0.344-2.354 2.005-5.26 5.188-2.349 2.583-4.266 4.75-4.266 4.839 0 0.094 1.938 2.286 4.313 4.891 4.724 5.188 5.234 5.578 7.469 5.604 1.385 0 3.276-0.786 3.391-1.411 0.021-0.208-1.708-2.281-3.875-4.656-2.141-2.37-3.917-4.38-3.917-4.427 0-0.042 1.776-2.052 3.917-4.427 2.167-2.37 3.896-4.448 3.875-4.63-0.115-0.599-1.823-1.292-3.297-1.385-1.063-0.047-1.615 0.047-2.349 0.417zM10.604 22.63c-2.859 3.161-5.208 5.833-5.255 5.948-0.047 0.094 0.276 0.417 0.693 0.714 0.552 0.417 1.151 0.578 2.281 0.625 2.099 0.135 2.88-0.349 5.531-3.344 1.156-1.292 2.146-2.375 2.167-2.375 0.026 0 1.016 1.083 2.193 2.396 2.698 3 3.411 3.438 5.51 3.323 1.13-0.047 1.729-0.208 2.281-0.625 0.417-0.297 0.74-0.62 0.693-0.714-0.115-0.344-10.563-11.76-10.745-11.734-0.094 0-2.49 2.604-5.349 5.786z" />
+                            </svg>
+                            <h2>Proxmox</h2>
+
+                        </div>
+                    </div></a>
+                </li>
+
+            </ul>
+        </div>
     </div>
-</div>
 
 }
