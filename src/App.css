@@ -164,11 +164,11 @@ iframe {
 }
 
 a {
-  color: rgb(141, 143, 182);
+  color: #bcc4f0;
 }
 a:link {
   text-decoration: none;
-  color: white;
+  color: #bcc4f0;
 }
 
 .trav-buttons {
