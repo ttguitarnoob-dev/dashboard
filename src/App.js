@@ -40,6 +40,7 @@ function App() {
       break
     case "/budget":
       Component = <Budget />
+      Navigation= <TravNav />
       break
   }
   return (
