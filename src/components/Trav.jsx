@@ -7,26 +7,29 @@ export default function Trav() {
 
 
 
-    //fetch pihole data
-    const url = 'http://10.24.24.112/admin/api.php?summary&auth=ca070dc73175206fd289ecf8e992614289b7db7a046f1f71c709c77f704008e3'
-    const url2 = "https://10.24.24.22:8006/api2/json/"
-    const [pihole, setPihole] = useState([])
+    // //fetch pihole data
+    // const url = 'http://10.24.24.112/admin/api.php?summary&auth=ca070dc73175206fd289ecf8e992614289b7db7a046f1f71c709c77f704008e3'
+    // const url2 = "https://10.24.24.22:8006/api2/json/"
+    // const url3 = "https://catfact.ninja/docs/api-docs.json"
+    // const [pihole, setPihole] = useState([])
 
 
-    async function fetchPihole(myurl) {
-        console.log('url', myurl)
-        const response = await fetch(myurl, { mode: "no-cors" })
-        console.log('response', response)
-        const data = await response.json()
-        console.log('data', data)
-        setPihole(data)
-    }
+    // async function fetchPihole(myurl) {
+    //     console.log('url', myurl)
+    //     const response = await fetch(myurl, { mode: "no-cors" })
+    //     console.log('response', response)
+    //     const data = await response.json() 
+    //     console.log('data', data)
+    //     setPihole(data)
+    // }
 
-    useEffect(() => {
-        fetchPihole(url2)
-    }, [])
+    // useEffect(() => {
+    //     fetchPihole(url3)
+    // }, [])
 
-    console.log('pismell', pihole)
+   
+
+    // console.log('pismell', pihole)
 
 
     //render
