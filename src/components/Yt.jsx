@@ -5,7 +5,10 @@ export default function Yt() {
 
 
             <body>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/j_OyHUqIIOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe src="http://10.24.24.47:32400/web" height="600" width="94%" title="Wikipedia">
+
+    
+    </iframe>
             </body>
         </div>
     )
