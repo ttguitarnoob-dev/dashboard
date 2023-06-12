@@ -9,6 +9,7 @@ import Yt from './components/Yt';
 import TravNav from './components/TravNav';
 import Trav from './components/Trav';
 import Budget from './components/Budget';
+import NoGame from './components/NoGame';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -36,6 +37,10 @@ function App() {
       break
     case "/youtube":
       Component = <Yt />
+      Navigation = <HazelNav />
+      break
+    case "/no-game":
+      Component = <NoGame />
       Navigation = <HazelNav />
       break
     case "/budget":

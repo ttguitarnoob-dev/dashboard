@@ -191,3 +191,12 @@ a:link {
   margin-bottom: 0.5rem;
 }
 
+.no-game {
+  background-color: pink;
+  padding: 2rem;
+  border: 2px solid rgb(184, 0, 126);
+  border-radius: 20px;
+  margin: 2rem;
+  margin-top: 2rem;
+
+}
