@@ -23,9 +23,9 @@ export default function Trav() {
         setPihole(data)
     }
 
-    useEffect(() => {
-        fetchPihole(url3)
-    }, [])
+    // useEffect(() => {
+    //     fetchPihole(url3)
+    // }, [])
 
    
 
