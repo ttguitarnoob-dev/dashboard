@@ -29,7 +29,7 @@ body {
 
 .kiara-page {
   /* background-color: rgb(0, 0, 0); */
-  background-image: url("../public/wp3324037.jpg");
+  background-image: url("../public/kiara-background.webp");
   background-repeat: none;
   background-size: cover;
   height: 100vh;
@@ -172,8 +172,26 @@ iframe {
   margin-top: 1rem;
 }
 
+.kiara-items {
+  background-color: rgb(220, 199, 240);
+  height: 12vh;
+  width: 15rem;
+  border: solid 2px rgb(55, 50, 116);
+  border-radius: 2rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.kiara-items h2 {
+  color: #5f047f;
+}
+
 .dash-items:hover {
   transform: scale(1.2);
+}
+
+.kiara-items:hover {
+  transform: scale(1.1);
 }
 
 .button-content {
