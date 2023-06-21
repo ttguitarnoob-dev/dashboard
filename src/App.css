@@ -57,8 +57,13 @@ h1 {
 .travnav-items {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   margin-left: 2rem;
+  
+}
+
+.travnav-items a {
+  padding-right: 3rem;
 }
 
 .hazel-header {
