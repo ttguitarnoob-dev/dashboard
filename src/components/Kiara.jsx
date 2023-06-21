@@ -5,7 +5,7 @@ export default function Kiara() {
         <div className="main-buttons">
             <ul className="trav-buttons">
             <li>
-                    <a href="/task-random" target="blank">
+                    <a href="/task-random">
                         <div className="kiara-items">
                             <div className="button-content">
                                 {/* <i data-src="../public/Icons/proxmox_logo_icon_144960.svg"></i> */}
