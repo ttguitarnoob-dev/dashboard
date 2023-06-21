@@ -27,6 +27,15 @@ body {
   /* z-index: -3; */
 }
 
+.kiara-page {
+  /* background-color: rgb(0, 0, 0); */
+  background-image: url("../public/wp3324037.jpg");
+  background-repeat: none;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -6.5rem;
+}
+
 .budget-page {
   background-color: black;
   height: 100vh;
