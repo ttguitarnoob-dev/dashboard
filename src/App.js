@@ -12,6 +12,7 @@ import Trav from './components/Trav';
 import Budget from './components/Budget';
 import NoGame from './components/NoGame';
 import Kiara from './components/Kiara';
+import TaskRandom from './components/TaskRandom';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
       Component = <Kiara />
       Navigation= <TravNav />
       break
+    case "/task-random":
+      Component = <TaskRandom />
+      Navigation = <TravNav />
   }
   return (
     <>
