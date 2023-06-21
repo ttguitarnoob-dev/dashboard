@@ -14,9 +14,10 @@ export default function TaskRandom() {
     }
 
 
-    return <div>
+    return <div className="task-random">
+        <div className="spinner">
         <h2>Spin the not wheel to see your next task!</h2>
         <button onClick={Spin}>{task}</button>
-        
+        </div>
     </div>
 }

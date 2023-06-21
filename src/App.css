@@ -201,6 +201,14 @@ iframe {
   
 }
 
+.task-random {
+  background-image: url("../public/kiara-background.webp");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  margin-top: -1.4rem;
+}
+
 a {
   color: #bcc4f0;
 }
