@@ -7,7 +7,6 @@ import Wiki from './components/Wiki';
 import Poke from './components/Poke';
 import Yt from './components/Yt';
 import TravNav from './components/TravNav';
-import KiaraNav from './components/KiaraNav';
 import Trav from './components/Trav';
 import Budget from './components/Budget';
 import NoGame from './components/NoGame';
