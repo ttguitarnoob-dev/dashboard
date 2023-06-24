@@ -4,7 +4,7 @@ export default function TaskRandom() {
 
     var [task, setTask] = useState("Your Next Task Awaits!")
 
-    const tasks = ["Cat Box", "Sweep", "Poo", "Pet Your Cat", "Pet Your Husband"]
+    const tasks = ["Cat Box", "Sweep", "Poo", "Pet Your Cat", "Pet Your Husband", "Feed The Fishes"]
 
     function Spin() {
         const length = tasks.length
