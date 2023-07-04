@@ -43,7 +43,7 @@ export default function TaskRandom() {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         console.log("clicked", initialInput)
         //convert input to urlencoded
         const formBody = Object.keys(initialInput).map(key => 
@@ -68,6 +68,7 @@ export default function TaskRandom() {
             const createdTodo = await fetch(URL, options)
             const parsedTodo = await createdTodo.json()
             console.log('I guess it worked', parsedTodo)
+            // handleFetch()
         } catch (err) {
             console.log('create todo error', err)
         }
