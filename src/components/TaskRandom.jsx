@@ -15,16 +15,10 @@ export default function TaskRandom() {
         }
         const response = await fetch(URL, options)
         const results = await response.json()
+        //Create array by iterating through json results and filtering out each item key
         const array = results.map(item =>
             item.item)
-        console.log('raarary', array)
         setTaskList(array)
-        
-        // results.map(item =>
-        //     tasks.push(item.item))
-        
-        // console.log('itemlist', tasks)
-        
     }
 
     //handleFetch function call
@@ -38,11 +32,8 @@ export default function TaskRandom() {
     }
 
     function Spin() {
-        console.log('stuipd array', tasklist)
         const length = tasklist.length
-        console.log('how many things', tasks)
         task = tasklist[Math.floor(Math.random() * length)]
-        console.log('tasky', task)
         setTask(task)
     }
 
