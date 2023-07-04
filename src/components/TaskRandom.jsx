@@ -19,28 +19,34 @@ export default function TaskRandom() {
 
     const handleAddItem = (e) => {
         initialInput.item = e.target.value
-        console.log(e.target.value)
+        console.log('omg', initialInput)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("clicked", initialInput)
-        createItem(initialInput)
+        const formBody = Object.keys(initialInput).map(key => 
+            encodeURIComponent(key) + '=' +
+            encodeURIComponent(initialInput[key])).join('&')
+            
+        createItem(formBody)
     }
 
     const createItem = async (data) => {
+        console.log('createitem', data)
         const URL = "http://10.24.24.165:8000/todos"
         const options = {
             method: "POST",
-            body: JSON.stringify(data),
-            mode: "cors",
+            body: data,
+            // mode: "cors",
             headers: {
-                "Content-type": "application/json; charset=utf-8"
+                "Content-type": "application/x-www-form-urlencoded"
             }
         }
         try {
             const createdTodo = await fetch(URL, options)
-            console.log('I guess it worked')
+            const parsedTodo = await createdTodo.json()
+            console.log('I guess it worked', parsedTodo)
         } catch (err) {
             console.log('create todo error', err)
         }
@@ -65,7 +71,7 @@ export default function TaskRandom() {
                         <li>
                             <label htmlFor="item">Item Name</label>
                             <input
-                                name="name"
+                                name="item"
                                 id="title"
                                 type="text"
                                 placeholder="New Todo Thing"
