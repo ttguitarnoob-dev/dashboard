@@ -46,10 +46,10 @@ export default function TaskRandom() {
         // e.preventDefault()
         console.log("clicked", initialInput)
         //convert input to urlencoded
-        const formBody = Object.keys(initialInput).map(key => 
+        const formBody = Object.keys(initialInput).map(key =>
             encodeURIComponent(key) + '=' +
             encodeURIComponent(initialInput[key])).join('&')
-            
+
         createItem(formBody)
     }
 
@@ -82,29 +82,26 @@ export default function TaskRandom() {
             <div className="spinner">
                 <h2>Spin the not wheel to see your next task?!</h2>
                 <button className="random-button" onClick={Spin}>{task}</button>
-            </div>
-        </div>
-
-        <div className="spinner-container">
-            <div className="create-form">
-                <form onSubmit={handleSubmit}>
-                    <h2>Add A Thing</h2>
-                    <ul className="form">
-                        <li>
-                            <label htmlFor="item">Item Name</label>
-                            <input
-                                name="item"
-                                id="title"
-                                type="text"
-                                placeholder="New Todo Thing"
-                                onChange={handleAddItem}
-                            />
-                        </li>
-                        <li>
-                            <button>Add The Thing</button>
-                        </li>
-                    </ul>
-                </form>
+                <div className="create-form">
+                    <form onSubmit={handleSubmit}>
+                        <h2>Add A Thing</h2>
+                        <ul className="form">
+                            <li>
+                                <label htmlFor="item">Thing Name</label>
+                                <input
+                                    name="item"
+                                    id="title"
+                                    type="text"
+                                    placeholder="New Todo Thing"
+                                    onChange={handleAddItem}
+                                />
+                            </li>
+                            <li>
+                                <button className="random-button">Add The Thing</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -201,9 +201,19 @@ iframe {
   
 }
 .random-button {
+  display: flex;
+  align-items: center;
   color: #5f047f;
   background-color:#bcc4f0;
   border-color: #5f047f;
+}
+
+input {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 30px;
 }
 
 .spinner {
@@ -214,9 +224,13 @@ iframe {
   background-color: #594c66eb;
   width: 90vw;
   margin-top: 3vh;
-  padding: 1rem 0 3rem 0;
+  padding: 1rem 0 3rem 1rem;
   border: 2px solid rgb(37, 1, 37);
   border-radius: 20px;
+}
+
+label {
+  color: #bcc4f0;
 }
 
 .spinner h2 {
@@ -236,6 +250,8 @@ iframe {
   align-items: center;
   justify-content: center;
 }
+
+
 
 a {
   color: #bcc4f0;
