@@ -1,18 +1,47 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function TaskRandom() {
 
     var [task, setTask] = useState("Your Next Task Awaits!")
+    var [tasklist, setTaskList] = useState([])
 
-    const tasks = ["Cat Box", "Sweep", "Poo", "Pet Your Cat", "Pet Your Husband", "Feed The Fishes"]
+    var tasks = []
 
+    //Fetch current tasks
+    const handleFetch = async () => {
+        const URL = "http://10.24.24.165:8000/todos"
+        const options = {
+            method: "GET"
+        }
+        const response = await fetch(URL, options)
+        const results = await response.json()
+        const array = results.map(item =>
+            item.item)
+        console.log('raarary', array)
+        setTaskList(array)
+        
+        // results.map(item =>
+        //     tasks.push(item.item))
+        
+        // console.log('itemlist', tasks)
+        
+    }
+
+    //handleFetch function call
+    useEffect(() => {
+        handleFetch()
+    }, [])
+
+    //Form input
     let initialInput = {
         item: ""
     }
 
     function Spin() {
-        const length = tasks.length
-        task = tasks[Math.floor(Math.random() * length)]
+        console.log('stuipd array', tasklist)
+        const length = tasklist.length
+        console.log('how many things', tasks)
+        task = tasklist[Math.floor(Math.random() * length)]
         console.log('tasky', task)
         setTask(task)
     }
@@ -25,6 +54,7 @@ export default function TaskRandom() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("clicked", initialInput)
+        //convert input to urlencoded
         const formBody = Object.keys(initialInput).map(key => 
             encodeURIComponent(key) + '=' +
             encodeURIComponent(initialInput[key])).join('&')
