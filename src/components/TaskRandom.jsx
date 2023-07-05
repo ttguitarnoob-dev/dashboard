@@ -37,8 +37,12 @@ export default function TaskRandom() {
         const length = tasklist.length
         const index = [Math.floor(Math.random() * length)]
         const delUrl = `http://10.24.24.165:8000/todos/${tasklist[index]._id}`
-        task = <a href={delUrl}><h2>{tasklist[index].item}</h2><button className="delete-button">✅</button></a>
+        task = <ul><li><h2>{tasklist[index].item}</h2></li><li><button className="delete-button" onClick={() => handleDelete(delUrl)}>✅</button></li></ul>
         setTask(task)
+    }
+
+    function handleDelete(URL) {
+        console.log("delete this bro", URL)
     }
 
     const handleAddItem = (e) => {
