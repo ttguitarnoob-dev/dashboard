@@ -41,8 +41,16 @@ export default function TaskRandom() {
         setTask(task)
     }
 
-    function handleDelete(URL) {
+    async function handleDelete(URL) {
         console.log("delete this bro", URL)
+        try{
+            const response = await fetch(URL, { method: "DELETE"})
+            const deletedTask = await response.json()
+            const updatedTasklist = tasklist.filter(task => task._id !== deletedTask._id)
+            setTaskList(updatedTasklist)
+        } catch(err) {
+            console.log('Something broke when you tried to delete that:', err)
+        }
     }
 
     const handleAddItem = (e) => {
