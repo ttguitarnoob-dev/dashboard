@@ -48,6 +48,7 @@ export default function TaskRandom() {
             const deletedTask = await response.json()
             const updatedTasklist = tasklist.filter(task => task._id !== deletedTask._id)
             setTaskList(updatedTasklist)
+            handleFetch()
         } catch(err) {
             console.log('Something broke when you tried to delete that:', err)
         }
