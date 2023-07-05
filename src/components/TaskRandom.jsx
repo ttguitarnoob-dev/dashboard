@@ -2,10 +2,10 @@ import { useState, useEffect } from "react"
 
 export default function TaskRandom() {
 
-    var [task, setTask] = useState("Your Next Task Awaits!")
+    //App State
+    var [task, setTask] = useState("What will it be???!!!")
     var [tasklist, setTaskList] = useState([])
 
-    var tasks = []
 
     //Fetch current tasks
     const handleFetch = async () => {
@@ -17,8 +17,10 @@ export default function TaskRandom() {
         const results = await response.json()
         //Create array by iterating through json results and filtering out each item key
         const array = results.map(item =>
-            item.item)
+            item)
+        
         setTaskList(array)
+        
     }
 
     //handleFetch function call
@@ -33,7 +35,9 @@ export default function TaskRandom() {
 
     function Spin() {
         const length = tasklist.length
-        task = tasklist[Math.floor(Math.random() * length)]
+        const index = [Math.floor(Math.random() * length)]
+        const delUrl = `http://10.24.24.165:8000/todos/${tasklist[index]._id}`
+        task = <a href={delUrl}><h2>{tasklist[index].item}</h2><button className="delete-button">✅</button></a>
         setTask(task)
     }
 
@@ -80,8 +84,12 @@ export default function TaskRandom() {
     return <div className="task-random">
         <div className="spinner-container">
             <div className="spinner">
-                <h2>Spin the not wheel to see your next task?!</h2>
-                <button className="random-button" onClick={Spin}>{task}</button>
+                <h2>Tasky Thing</h2>
+                
+                <button className="random-button" onClick={Spin}>Your Next Task Awaits!</button>
+                <div>
+                    {task}
+                </div>
                 <div className="create-form">
                     <form onSubmit={handleSubmit}>
                         <h2>Add A Thing</h2>
