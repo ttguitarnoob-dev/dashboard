@@ -16,11 +16,25 @@ export default function TaskRandom() {
         const response = await fetch(URL, options)
         const results = await response.json()
         //Create array by iterating through json results and filtering out each item key
-        const array = results.map(item =>
-            item)
-        
+        console.log('resutlslength', results)
+        var array = []
+        //This techinically fixes the bug caused when the tasklist is empty, but breaks the backend if you click the delete button
+        // if (results.length == 0) {
+        //     array = [{
+        //         "_id": "poo",
+        //         "item": "You don't have any tasks!!? Add one below!",
+        //         "completed": false,
+        //         "__v": 0
+        //     }]
+        // } else {
+        //     array = results.map(item =>
+        //         item)  
+        // }
+        array = results.map(item =>
+                   item) 
+
         setTaskList(array)
-        
+
     }
 
     //handleFetch function call
@@ -34,7 +48,8 @@ export default function TaskRandom() {
     }
 
     function Spin() {
-        const length = tasklist.length
+        var length = tasklist.length
+
         const index = [Math.floor(Math.random() * length)]
         const delUrl = `http://10.24.24.165:8000/todos/${tasklist[index]._id}`
         task = <ul><li><h2>{tasklist[index].item}</h2></li><li><button className="delete-button" onClick={() => handleDelete(delUrl)}>✅</button></li></ul>
@@ -43,12 +58,12 @@ export default function TaskRandom() {
 
     async function handleDelete(URL) {
         console.log("delete this bro", URL)
-        try{
-            const response = await fetch(URL, { method: "DELETE"})
+        try {
+            const response = await fetch(URL, { method: "DELETE" })
             const deletedTask = await response.json()
             const updatedTasklist = tasklist.filter(task => task._id !== deletedTask._id)
             setTaskList(updatedTasklist)
-        } catch(err) {
+        } catch (err) {
             console.log('Something broke when you tried to delete that:', err)
         }
     }
@@ -97,7 +112,7 @@ export default function TaskRandom() {
         <div className="spinner-container">
             <div className="spinner">
                 <h2>Tasky Thing</h2>
-                
+
                 <button className="random-button" onClick={Spin}>Your Next Task Awaits!</button>
                 <div>
                     {task}
