@@ -9,7 +9,8 @@ export default function TaskRandom() {
 
     //Fetch current tasks
     const handleFetch = async () => {
-        const URL = "http://10.24.24.165:8000/todos"
+        //the urls for fetch create and delete can be all put into one variable 
+        const URL = "https://api.ttguitarnoob.cloud/todos"
         const options = {
             method: "GET"
         }
@@ -51,7 +52,7 @@ export default function TaskRandom() {
         var length = tasklist.length
 
         const index = [Math.floor(Math.random() * length)]
-        const delUrl = `http://10.24.24.165:8000/todos/${tasklist[index]._id}`
+        const delUrl = `https://api.ttguitarnoob.cloud/todos/${tasklist[index]._id}`
         task = <ul><li><h2>{tasklist[index].item}</h2></li><li><button className="delete-button" onClick={() => handleDelete(delUrl)}>✅</button></li></ul>
         setTask(task)
     }
@@ -86,7 +87,7 @@ export default function TaskRandom() {
 
     const createItem = async (data) => {
         console.log('createitem', data)
-        const URL = "http://10.24.24.165:8000/todos"
+        const URL = "https://api.ttguitarnoob.cloud/todos"
         const options = {
             method: "POST",
             body: data,
