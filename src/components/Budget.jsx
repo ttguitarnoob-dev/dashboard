@@ -39,17 +39,23 @@ export default function Budget(props) {
     return <div className="budget-page">
 
         <div>
-            <ul>
+            <table>
+                <tr>
+                    <th>Expense</th>
+                    <th>How Much</th>
+                    <th>Due Date</th>
+                    <th>Paid Date</th>
+                </tr>
                 {budgetList && budgetList.map((budget, index) => (
-                    <li key={budget._id} >
-                        <div>
-                            <h1>{budget.billName}</h1>
-                            <p>{budget.howMuch}</p>
-                            <p>{budget.dueDate}</p>
-                        </div>
-                    </li>
+                    <tr key={budget._id}>
+                        <td>{budget.billName}</td>
+                        <td>{budget.howMuch}</td>
+                        <td>{budget.dueDate}</td>
+                        <td>{budget.paidDate}</td>
+                    </tr>
                 ))}
-            </ul>
+            </table>
+            
         </div>
 
     </div>
