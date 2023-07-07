@@ -2,8 +2,6 @@ import { useState, useEffect } from "react"
 
 export default function Budget(props) {
    
-    // var budgetList = props.budgetList
-    // console.log(budgetList)
 
     //Page State
     var [budgetList, setBudgetList] = useState([])
