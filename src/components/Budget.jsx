@@ -7,8 +7,8 @@ export default function Budget(props) {
     var [budgetList, setBudgetList] = useState([])
 
 
-    // const budgetURL = "https://api.ttguitarnoob.cloud/budgets"
-    const budgetURL = "http://localhost:8000/budgets"
+    const budgetURL = "https://api.ttguitarnoob.cloud/budgets"
+  
 
     async function handleFetch() {
         try {
@@ -16,6 +16,7 @@ export default function Budget(props) {
             const options = {
                 method: "GET"
             }
+            
             const response = await fetch(URL, options)
             const results = await response.json()
             var array = results.map(budget => budget)
