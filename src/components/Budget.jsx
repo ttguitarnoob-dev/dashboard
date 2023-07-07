@@ -38,7 +38,8 @@ export default function Budget() {
 
     return <div className="budget-page">
 
-        <h1 className="travnav">Poo</h1>
+        <h1 className="travnav">{budgetList[1].billName}</h1>
+        <p></p>
 
     </div>
 }

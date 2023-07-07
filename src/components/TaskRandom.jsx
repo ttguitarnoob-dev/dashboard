@@ -20,7 +20,7 @@ export default function TaskRandom() {
         const results = await response.json()
         //Create array by iterating through json results and filtering out each item key
         console.log('resutlslength', results)
-        var array = []
+        
         //This techinically fixes the bug caused when the tasklist is empty, but breaks the backend if you click the delete button
         // if (results.length == 0) {
         //     array = [{
@@ -33,7 +33,7 @@ export default function TaskRandom() {
         //     array = results.map(item =>
         //         item)  
         // }
-        array = results.map(item =>
+        var array = results.map(item =>
                    item) 
 
         setTaskList(array)
