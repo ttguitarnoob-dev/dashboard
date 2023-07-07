@@ -17,41 +17,7 @@ import TaskRandom from './components/TaskRandom';
 function App() {
 
 
-  //Budget Page State
-  var [budgetList, setBudgetList] = useState([])
-
-// const budgetURL = "https://api.ttguitarnoob.cloud/budgets"
-const budgetURL = "http://localhost:8000/budgets"
-
-  async function handleFetch() {
-    try {
-        // const URL = budgetURL
-        // const options = {
-        //     method: "GET"
-        // }
-        // const response = await fetch(URL, options)
-        // const results = await response.json()
-        // var array = results.map(budget => budget)
-      fetch(budgetURL).then(resp => {
-        return resp.json()
-        .then(data => {
-          setBudgetList(data)
-        })
-      })
-        
-
-        
-        console.log('budget', budgetList)
-    } catch (err) {
-        console.log('something bad happened when fetching', err)
-    }
-
-}
-
-//handleFetch function call
-useEffect(() => {
-    handleFetch()
-}, [])
+  
 
 
 
@@ -83,7 +49,7 @@ useEffect(() => {
       Navigation = <HazelNav />
       break
     case "/budget":
-      Component = <Budget budgetList={budgetList} setBudgetList={setBudgetList} />
+      Component = <Budget />
       Navigation= <TravNav />
       break
     case "/kiara":
