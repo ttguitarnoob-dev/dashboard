@@ -20,10 +20,8 @@ export default function Budget(props) {
             const results = await response.json()
             var array = results.map(budget => budget)
 
-            
-
             setBudgetList(array)
-            console.log('budget', budgetList)
+
         } catch (err) {
             console.log('something bad happened when fetching', err)
         }
