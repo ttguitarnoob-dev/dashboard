@@ -12,6 +12,7 @@ import Budget from './components/Budget';
 import NoGame from './components/NoGame';
 import Kiara from './components/Kiara';
 import TaskRandom from './components/TaskRandom';
+import Academy from './components/Academy';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -59,6 +60,11 @@ function App() {
     case "/task-random":
       Component = <TaskRandom />
       Navigation = <TravNav />
+      break
+    case "/smoopell":
+      Component = <Academy />
+      Navigation = <TravNav />
+      break
   }
   return (
     <>
