@@ -25,30 +25,50 @@ export default function NewJournal() {
             <form>
                 <ul>
                     <li>
-                        <label htmlFor="title">Journal Title</label>
+                        <label htmlFor="hilow">What was your high and low today?</label>
                         <input
-                            name="title"
-                            id="title"
+                            name="hilow"
+                            id="hilow"
                             type="text"
-                            placeholder="Enter Title"
+                            placeholder="Enter response here"
                             onChange={handleChange}
                         />
                     </li>
                     <li>
-                        <label htmlFor="journal">What Did You Learn Today?</label>
+                        <label htmlFor="learn">What Did You Learn at School Today?</label>
                         <textarea
                             name="learn"
-                            id="entry"
+                            id="learn"
                             type="textarea"
                             placeholder="Enter response here"
                             onChange={handleChange}
                         />
                     </li>
                     <li>
-                        <label htmlFor="journal">Name one thing that you failed at today.</label>
+                        <label htmlFor="fail">Name one thing that you failed at today.</label>
                         <input
                             name="fail"
-                            id="entry"
+                            id="fail"
+                            type="text"
+                            placeholder="Enter response here"
+                            onChange={handleChange}
+                        />
+                    </li>
+                    <li>
+                        <label htmlFor="failTeach">What did failing teach you?.</label>
+                        <input
+                            name="failTeach"
+                            id="failTeach"
+                            type="text"
+                            placeholder="Enter response here"
+                            onChange={handleChange}
+                        />
+                    </li>
+                    <li>
+                        <label htmlFor="failImprove">How can you improve next time?</label>
+                        <input
+                            name="failImprove"
+                            id="failImprove"
                             type="text"
                             placeholder="Enter response here"
                             onChange={handleChange}
