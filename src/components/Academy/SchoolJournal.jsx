@@ -7,11 +7,16 @@ export default function SchoolJournal() {
             <a href="/academy/journal/new">New Journal</a>
         </div>
 
-        <ul>
-            <li>Journal 1</li>
-            <li>Journal 2</li>
-            <li>Journal 3</li>
-        </ul>
+        <table>
+            <tr>
+                <th>Journal</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>Journal 1</td>
+                <td>8/8/2023</td>
+            </tr>
+        </table>
 
 
 
