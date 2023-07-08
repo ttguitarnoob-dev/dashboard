@@ -1,20 +1,16 @@
 export default function NewJournal() {
 
-    var initialInput = {
-        title: "",
-        entry: ""
-    }
+    var initialInput = {}
 
 
-    const handleAddTitle = (e) => {
-        initialInput.title = e.target.value
-        console.log('omgtitle', initialInput)
+    const handleChange = (e) => {
+        //take e.target.name and use it as the key for which initialInput to change
+        var edited = e.target.name
+        initialInput[edited] = e.target.value
+        console.log('omgchanged', initialInput)
     }
 
-    const handleAddEntry = (e) => {
-        initialInput.entry = e.target.value
-        console.log("entryyy", initialInput)
-    }
+  
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -35,17 +31,27 @@ export default function NewJournal() {
                             id="title"
                             type="text"
                             placeholder="Enter Title"
-                            onChange={handleAddTitle}
+                            onChange={handleChange}
                         />
                     </li>
                     <li>
-                        <label htmlFor="journal">Journal Entry</label>
+                        <label htmlFor="journal">What Did You Learn Today?</label>
                         <textarea
-                            name="entry"
+                            name="learn"
                             id="entry"
                             type="textarea"
-                            placeholder="What did you learn today?"
-                            onChange={handleAddEntry}
+                            placeholder="Enter response here"
+                            onChange={handleChange}
+                        />
+                    </li>
+                    <li>
+                        <label htmlFor="journal">Name one thing that you failed at today.</label>
+                        <input
+                            name="fail"
+                            id="entry"
+                            type="text"
+                            placeholder="Enter response here"
+                            onChange={handleChange}
                         />
                     </li>
                     <li>
