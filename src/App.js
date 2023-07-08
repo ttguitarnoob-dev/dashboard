@@ -14,6 +14,7 @@ import Kiara from './components/Kiara';
 import TaskRandom from './components/TaskRandom';
 import Academy from './components/Academy/Academy';
 import SchoolJournal from './components/Academy/SchoolJournal';
+import NewJournal from './components/Academy/NewJournal';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -68,6 +69,10 @@ function App() {
       break
     case "/academy/journal":
       Component = <SchoolJournal />
+      Navigation= <HazelNav />
+      break
+    case "/academy/journal/new":
+      Component = <NewJournal />
       Navigation= <HazelNav />
       break
   }
