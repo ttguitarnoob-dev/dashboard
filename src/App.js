@@ -12,7 +12,8 @@ import Budget from './components/Budget';
 import NoGame from './components/NoGame';
 import Kiara from './components/Kiara';
 import TaskRandom from './components/TaskRandom';
-import Academy from './components/Academy';
+import Academy from './components/Academy/Academy';
+import SchoolJournal from './components/Academy/SchoolJournal';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -61,9 +62,13 @@ function App() {
       Component = <TaskRandom />
       Navigation = <TravNav />
       break
-    case "/smoopell":
+    case "/academy":
       Component = <Academy />
-      Navigation = <TravNav />
+      Navigation = <HazelNav />
+      break
+    case "/academy/journal":
+      Component = <SchoolJournal />
+      Navigation= <HazelNav />
       break
   }
   return (
