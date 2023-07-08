@@ -8,14 +8,14 @@ export default function SchoolJournal() {
         </div>
 
         <table>
-            <tr>
+            <thead>
                 <th>Journal</th>
                 <th>Date</th>
-            </tr>
-            <tr>
+            </thead>
+            <tbody>
                 <td>Journal 1</td>
                 <td>8/8/2023</td>
-            </tr>
+            </tbody>
         </table>
 
 

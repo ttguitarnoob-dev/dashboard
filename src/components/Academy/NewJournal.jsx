@@ -53,6 +53,9 @@ export default function NewJournal() {
                     </li>
                 </ul>
             </form>
+            <div>
+                <a href="/academy/journal">Back to Learning Journal</a>
+            </div>
         </div>
     </div>
 
