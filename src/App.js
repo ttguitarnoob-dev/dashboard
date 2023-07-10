@@ -1,6 +1,7 @@
 
 import './App.css';
 import React, { useEffect, useState } from "react"
+import { Route, Routes } from 'react-router-dom';
 import Hazel from './components/Hazel';
 import HazelNav from './components/HazelNav';
 import Wiki from './components/Wiki';
@@ -15,6 +16,7 @@ import TaskRandom from './components/TaskRandom';
 import Academy from './components/Academy/Academy';
 import SchoolJournal from './components/Academy/SchoolJournal';
 import NewJournal from './components/Academy/NewJournal';
+import JournalDetails from './components/Academy/JournalDetails';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -75,13 +77,23 @@ function App() {
       Component = <NewJournal />
       Navigation= <HazelNav />
       break
+    case "/academy/journal/:id":
+      Component = <JournalDetails />
+      Navigation = <HazelNav />
   }
   return (
-    <>
+    // <>
      
-      {Navigation}
-      {Component}
-    </>
+    //   {Navigation}
+    //   {Component}
+    // </>
+    <div>
+      <HazelNav />
+      <Routes>
+      <Route path='/academy/journal/:id' element={<JournalDetails />} />
+      <Route path='/academy/journal/' element={<SchoolJournal />} />
+      </Routes>
+    </div>
 
   )
 }

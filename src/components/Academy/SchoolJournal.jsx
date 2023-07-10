@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 
 export default function SchoolJournal() {
@@ -50,7 +51,10 @@ export default function SchoolJournal() {
         <div className="journal-list">
             <ul>
                 {journalList && journalList.map((journal, index) => (
-                    <a href={`${journalURL}/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
+                    // <a href={`/academy/journal/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
+                    <li key={journal._id}>
+                    <Link to={`/academy/journal/${journal._id}`}>{journal.date}</Link>
+                    </li>
                 ))}
             </ul>
         </div>
