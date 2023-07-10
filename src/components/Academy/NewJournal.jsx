@@ -1,6 +1,7 @@
 export default function NewJournal() {
 
     var initialInput = {}
+    const journalURL = ""
 
 
     const handleChange = (e) => {
@@ -15,6 +16,33 @@ export default function NewJournal() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("Submitted", initialInput)
+        const formBody = Object.keys(initialInput).map(key =>
+            encodeURIComponent(key) + '=' +
+            encodeURIComponent(initialInput[key])).join('&')
+        
+        createItem(formBody)
+
+    }
+
+    const createItem = async (data) => {
+        console.log('creating journal entry', data)
+        const URL = journalURL
+        const options = {
+            method: "POST",
+            body: data,
+            // mode: "cors",
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded"
+            }
+        }
+        try {
+            const createdJournal = await fetch(URL, options)
+            const parsedTodo = await createdJournal.json()
+
+        } catch (err) {
+            console.log('error creating journal', err)
+        }
+        console.log('Journal created', data)
     }
 
     console.log('smelljournalnewthing')
