@@ -22,7 +22,7 @@ import JournalDetails from './components/Academy/JournalDetails';
 function App() {
 
 
-  
+
 
 
 
@@ -55,11 +55,11 @@ function App() {
       break
     case "/budget":
       Component = <Budget />
-      Navigation= <TravNav />
+      Navigation = <TravNav />
       break
     case "/kiara":
       Component = <Kiara />
-      Navigation= <TravNav />
+      Navigation = <TravNav />
       break
     case "/task-random":
       Component = <TaskRandom />
@@ -71,11 +71,11 @@ function App() {
       break
     case "/academy/journal":
       Component = <SchoolJournal />
-      Navigation= <HazelNav />
+      Navigation = <HazelNav />
       break
     case "/academy/journal/new":
       Component = <NewJournal />
-      Navigation= <HazelNav />
+      Navigation = <HazelNav />
       break
     case "/academy/journal/:id":
       Component = <JournalDetails />
@@ -83,15 +83,21 @@ function App() {
   }
   return (
     // <>
-     
+
     //   {Navigation}
     //   {Component}
     // </>
     <div>
       <HazelNav />
       <Routes>
-      <Route path='/academy/journal/:id' element={<JournalDetails />} />
-      <Route path='/academy/journal/' element={<SchoolJournal />} />
+        <Route path='/academy/journal/:id' element={<JournalDetails />} />
+        <Route path='/academy/journal/' element={<SchoolJournal />} />
+        <Route path='/academy/journal/new' element={<NewJournal />} />
+        <Route path='/academy' element={<Academy />} />
+        <Route path='/hazel' element={<Hazel />} />
+        <Route path='/wiki' element={<Wiki />} />
+        <Route path='/poke' element={<Poke />} />
+        <Route path='/academy/journal/' element={<SchoolJournal />} />
       </Routes>
     </div>
 
