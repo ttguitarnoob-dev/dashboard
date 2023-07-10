@@ -47,7 +47,7 @@ export default function SchoolJournal() {
         </div>
 
         <h3>Look back at your old journals!</h3>
-        <div>
+        <div className="journal-list">
             <ul>
                 {journalList && journalList.map((journal, index) => (
                     <a href={`${journalURL}/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
