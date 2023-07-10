@@ -1,7 +1,7 @@
 export default function NewJournal() {
 
     var initialInput = {}
-    const journalURL = ""
+    const journalURL = "https://api.ttguitarnoob.cloud/journals"
 
 
     const handleChange = (e) => {
@@ -37,7 +37,9 @@ export default function NewJournal() {
         }
         try {
             const createdJournal = await fetch(URL, options)
-            const parsedTodo = await createdJournal.json()
+            console.log("it's working so far", createdJournal)
+            const parsedJournal = await createdJournal.json()
+            console.log("what is the data I'm trying to send", parsedJournal)
 
         } catch (err) {
             console.log('error creating journal', err)
