@@ -17,9 +17,18 @@ import Academy from './components/Academy/Academy';
 import SchoolJournal from './components/Academy/SchoolJournal';
 import NewJournal from './components/Academy/NewJournal';
 import JournalDetails from './components/Academy/JournalDetails';
+import Countdown from './components/Countdown';
 // import Prodigy from './components/Prodigy';
 
 function App() {
+
+  //getting timestamp of hardcoded date for countdown component props
+  const toTimestamp = (strDate) => {
+    const dt = new Date(strDate).getTime();
+    return dt
+  };
+  
+ 
 
 
 
@@ -98,6 +107,8 @@ function App() {
         <Route path='/wiki' element={<Wiki />} />
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
+        <Route path='/countdown' element={<Countdown countdownTimestampMs ={toTimestamp("07/24/2023 23:31:30")}/>} />
+        
       </Routes>
     </div>
 

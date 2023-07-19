@@ -305,3 +305,30 @@ tr:nth-child(even) {
   margin-top: -6.5rem;
   /* z-index: -3; */
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25vh;
+  flex-direction: column;
+}
+
+.countdown {
+  width: 800px;
+  height: 100px;
+  border: 3px solid black;
+  border-radius: 60px;
+  background-color: rgb(142, 1, 185);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown span {
+  margin-left: 1rem;
+ 
+  font-size: 20px;
+}
+
