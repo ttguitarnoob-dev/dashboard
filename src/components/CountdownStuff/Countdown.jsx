@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getRemainingTime } from "./Utils/CountDownUtils"
+import { getRemainingTime } from "./CountDownUtils"
 
 
 const defaultRemainingTime = {
@@ -10,7 +10,7 @@ const defaultRemainingTime = {
 }
 
 
-export default function Countdown({countdownTimestampMs}) {
+export default function Countdown({ countdownTimestampMs }) {
 
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
@@ -31,17 +31,17 @@ export default function Countdown({countdownTimestampMs}) {
     return <div>
         <div className="container">
             <h2>Time Until I'm Home!!!</h2>
-        <div className="countdown">
-            
-            <span>{remainingTime.days}</span>
-            <span>days</span>
-            <span>{remainingTime.hours}</span>
-            <span>hours</span>
-            <span>{remainingTime.minutes}</span>
-            <span>minutes</span>
-            <span>{remainingTime.seconds}</span>
-            <span>seconds</span>
+            <div className="countdown">
+
+                <span>{remainingTime.days}</span>
+                <span>days</span>
+                <span>{remainingTime.hours}</span>
+                <span>hours</span>
+                <span>{remainingTime.minutes}</span>
+                <span>minutes</span>
+                <span>{remainingTime.seconds}</span>
+                <span>seconds</span>
+            </div>
         </div>
-</div>
     </div>
 }
