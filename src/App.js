@@ -97,14 +97,14 @@ function App() {
     //   {Component}
     // </>
     <div>
-      <HazelNav />
+      <TravNav />
       <Routes>
         <Route path='/academy/journal/:id' element={<JournalDetails />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/academy/journal/new' element={<NewJournal />} />
         <Route path='/academy' element={<Academy />} />
-        <Route path='/hazel' element={<Hazel />} />
-        <Route path='/wiki' element={<Wiki />} />
+        <Route path='/kiara' element={<Kiara />} />
+        <Route path='/' element={<Trav />} />
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/countdown' element={<Countdown countdownTimestampMs ={toTimestamp("07/24/2023 23:31:30")}/>} />
