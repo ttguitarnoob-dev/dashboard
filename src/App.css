@@ -315,8 +315,8 @@ tr:nth-child(even) {
 }
 
 .countdown {
-  width: 800px;
-  height: 100px;
+  width: 90vw;
+  height: 9rem;
   border: 3px solid black;
   border-radius: 60px;
   background-color: rgb(142, 1, 185);
