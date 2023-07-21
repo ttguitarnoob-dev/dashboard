@@ -109,7 +109,7 @@ function App() {
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/countdown/new' element={<NewCountdown />} />
-        <Route path='/countdown' element={<Countdown countdownTimestampMs={toTimestamp("07/24/2023 23:31:30")} />} />
+        <Route path='/countdown/:id' element={<Countdown countdownTimestampMs={toTimestamp("07/24/2023 23:31:30")} />} />
 
       </Routes>
     </div>
