@@ -3,7 +3,7 @@ export default function NewCountdown() {
 
 
     var initialInput = {}
-    const journalURL = "https://api.ttguitarnoob.cloud/journals"
+    const journalURL = "https://api.ttguitarnoob.cloud/countdowns"
 
 
 
