@@ -58,7 +58,7 @@ export default function Countdown({ countdownTimestampMs }) {
         const intervalId = setInterval(() => {
             //the argument for this function call will be the timestamp fetched by searching the countdown by id when clicking on the link on the index page
             console.log('timestamp im passsssing to the functionf', timestamp.date)
-            updateRemainingTime(timestamp.date / 1000)
+            updateRemainingTime(timestamp.date)
         }, 1000);
         return () => clearInterval(intervalId)
     }, [])
