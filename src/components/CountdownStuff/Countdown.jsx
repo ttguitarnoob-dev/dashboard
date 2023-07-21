@@ -33,7 +33,7 @@ export default function Countdown({ countdownTimestampMs }) {
             setTimestamp(array)
 
         } catch (err) {
-            console.log('something bad happened when fetching', err)
+            console.log('something bads happened when fetching', err)
         }
 
     }
@@ -43,10 +43,11 @@ export default function Countdown({ countdownTimestampMs }) {
     }, [])
 
 
-
+//to get this to work, this page will have to be a show page
 
     useEffect(() => {
         const intervalId = setInterval(() => {
+            //the argument for this function call will be the timestamp fetched by searching the countdown by id when clicking on the link on the index page
             updateRemainingTime(timestamp[0].date)
         }, 1000);
         return () => clearInterval(intervalId)
@@ -62,6 +63,7 @@ export default function Countdown({ countdownTimestampMs }) {
         <div className="container">
             <h2>Time Until I'm Home!!!</h2>
             <div className="countdown">
+            
 
                 <span>{remainingTime.days}</span>
                 <span>days</span>
