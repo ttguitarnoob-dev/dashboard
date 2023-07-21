@@ -19,7 +19,9 @@ export default function Countdown({ countdownTimestampMs }) {
 
     //State
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
+    const [displayData, setDisplayData] = useState([])
     const [timestamp, setTimestamp] = useState([])
+    
 
     //variables
     const { id } = useParams()
@@ -36,10 +38,12 @@ export default function Countdown({ countdownTimestampMs }) {
             const response = await fetch(URL, options)
             console.log('response', response)
             const results = await response.json()
-            console.log('reuslt', results)
+            console.log('reuslt', results.date)
+            const dt = new Date(results.date).getTime();
             
-
-            setTimestamp(results)
+            
+            setDisplayData(results)
+            setTimestamp(dt)
 
         } catch (err) {
             console.log('something bads happened when fetching', err)
@@ -57,8 +61,8 @@ export default function Countdown({ countdownTimestampMs }) {
     useEffect(() => {
         const intervalId = setInterval(() => {
             //the argument for this function call will be the timestamp fetched by searching the countdown by id when clicking on the link on the index page
-            console.log('timestamp im passsssing to the functionf', timestamp.date)
-            updateRemainingTime(timestamp.date)
+            console.log('timestamp im passssssssing to the functionf', timestamp.date)
+            updateRemainingTime(countdownTimestampMs)
         }, 1000);
         return () => clearInterval(intervalId)
     }, [])
@@ -71,7 +75,8 @@ export default function Countdown({ countdownTimestampMs }) {
 
     return <div>
         <div className="container">
-            <h2>{timestamp.title}</h2>
+            <h2>{displayData.title}</h2>
+            <h1>{displayData.date}</h1>
             <div className="countdown">
             
 
