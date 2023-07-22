@@ -51,11 +51,8 @@ export default function Countdown() {
     }, [])
 
 
-//to get this to work, this page will have to be a show page and get the timestamp from useParams
-
     useEffect(() => {
         const intervalId = setInterval(() => {
-            //the argument for this function call will be the timestamp fetched by searching the countdown by id when clicking on the link on the index page
             console.log('passssssssing to the functionf', stupid)
             updateRemainingTime(stupid)
         }, 1000);
@@ -70,6 +67,7 @@ export default function Countdown() {
 
     return <div>
         <div className="container">
+            <a href="/countdown"><button>Countdowns</button></a>
             <h2>{displayData.title}</h2>
             <h1>You can't wait for {displayData.date}!!</h1>
             <div className="countdown">

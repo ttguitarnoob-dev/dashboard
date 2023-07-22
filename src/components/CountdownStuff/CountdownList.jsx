@@ -38,6 +38,11 @@ export default function CountdownList() {
     return <div>
         <div className="journal-list">
 
+            <div>
+                <h2>Countdowns!</h2>
+                <a href="/countdown/new"><button>New Countdown</button></a>
+            </div>
+
             <ul>
                 {countdownList && countdownList.map((countdown, index) => (
                     // <a href={`/academy/journal/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
