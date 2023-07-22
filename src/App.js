@@ -30,17 +30,15 @@ function App() {
   //   return dt
   // };
 
-  async function HandleDelete(id, delURL) {
-    const URL = `${delURL}${id}`
-    console.log('deleting', URL)
+  async function HandleDelete(delURL) {
+    
+    console.log('deleting', delURL)
     try {
-
-      console.log('url', URL)
       const options = {
         method: "DELETE"
       }
 
-      const response = await fetch(URL, options)
+      const response = await fetch(delURL, options)
       const results = await response.json()
 
 

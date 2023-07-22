@@ -23,13 +23,13 @@ console.log('props', props)
     //variables
     const { HandleDelete } = props
     const { id } = useParams()
-    const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/`
+    const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/${id}`
     var stupid = 0
 
     //Functions
     async function handleFetch() {
         try {
-            const URL = `${countdownURL}${id}`
+            const URL = countdownURL
             console.log('url', URL)
             const options = {
                 method: "GET"
@@ -68,7 +68,7 @@ console.log('props', props)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        HandleDelete(displayData._id, countdownURL)
+        HandleDelete(countdownURL)
     }
 
 
