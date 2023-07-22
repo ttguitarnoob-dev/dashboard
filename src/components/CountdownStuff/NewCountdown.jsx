@@ -54,6 +54,7 @@ export default function NewCountdown() {
 
     return <div>
         <h2>New Countdown</h2>
+        <a href="/countdown"><button>Countdowns</button></a>
         <form onSubmit={handleSubmit}>
             <input type="text" name="title" id="title" placeholder="Enter a name for your countdown" onChange={handleChange}/>
 
