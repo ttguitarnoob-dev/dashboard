@@ -35,7 +35,7 @@ export default function Countdown() {
             const response = await fetch(URL, options)
             const results = await response.json()
             const dateString = results.date
-            results.date = new Date().toLocaleDateString()
+            results.date = new Date(dateString).toLocaleDateString()
             const dt = new Date(dateString).getTime()
             setDisplayData(results)
             stupid = dt
