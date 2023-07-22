@@ -33,19 +33,12 @@ export default function Countdown() {
             }
             
             const response = await fetch(URL, options)
-            console.log('response', response)
             const results = await response.json()
             const dateString = results.date
-            console.log('reuslt', dateString)
+            results.date = new Date().toLocaleDateString()
             const dt = new Date(dateString).getTime()
-            
-            
-           
             setDisplayData(results)
             stupid = dt
-            // setTimestamp(dt)
-            console.log('stupid', stupid)
-
         } catch (err) {
             console.log('something badssss happened when fetching', err)
         }
@@ -78,7 +71,7 @@ export default function Countdown() {
     return <div>
         <div className="container">
             <h2>{displayData.title}</h2>
-            <h1>{displayData.date}</h1>
+            <h1>You can't wait for {displayData.date}!!</h1>
             <div className="countdown">
             
 
