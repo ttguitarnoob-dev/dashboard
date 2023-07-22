@@ -12,22 +12,25 @@ const defaultRemainingTime = {
 
 
 
-export default function Countdown() {
+export default function Countdown(props) {
     
+console.log('props', props)
 
     //State
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
     const [displayData, setDisplayData] = useState([])
     
     //variables
+    const { HandleDelete } = props
     const { id } = useParams()
-    const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/${id}`
+    const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/`
     var stupid = 0
 
     //Functions
     async function handleFetch() {
         try {
-            const URL = countdownURL
+            const URL = `${countdownURL}${id}`
+            console.log('url', URL)
             const options = {
                 method: "GET"
             }
@@ -63,6 +66,11 @@ export default function Countdown() {
         setRemainingTime(getRemainingTime(countdown))
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        HandleDelete(displayData._id, countdownURL)
+    }
+
 
 
     return <div>
@@ -82,6 +90,11 @@ export default function Countdown() {
                 <span>{remainingTime.seconds}</span>
                 <span>seconds</span>
             </div>
+        </div>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <button>Delete Countdown</button>
+            </form>
         </div>
     </div>
 }

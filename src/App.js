@@ -25,10 +25,15 @@ import CountdownList from './components/CountdownStuff/CountdownList';
 function App() {
 
   //getting timestamp of hardcoded date for countdown component props
-  const toTimestamp = (strDate) => {
-    const dt = new Date(strDate).getTime();
-    return dt
-  };
+  // const toTimestamp = (strDate) => {
+  //   const dt = new Date(strDate).getTime();
+  //   return dt
+  // };
+
+  async function HandleDelete(id, url) {
+  
+    console.log('deleting', id, url)
+  }
 
 
 
@@ -110,7 +115,7 @@ function App() {
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/countdown/new' element={<NewCountdown />} />
-        <Route path='/countdown/:id' element={<Countdown />} />
+        <Route path='/countdown/:id' element={<Countdown HandleDelete={HandleDelete}/>} />
         <Route path='/countdown' element={<CountdownList />} />
 
 
