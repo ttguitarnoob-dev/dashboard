@@ -21,11 +21,13 @@ export default function Countdown({ countdownTimestampMs }) {
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
     const [displayData, setDisplayData] = useState([])
     const [timestamp, setTimestamp] = useState(0)
+
     
 
     //variables
     const { id } = useParams()
     const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/${id}`
+    var stupid = 0
 
     //Functions
     async function handleFetch() {
@@ -45,8 +47,9 @@ export default function Countdown({ countdownTimestampMs }) {
             
            
             setDisplayData(results)
-            setTimestamp(dt)
-            console.log('toijfosijd', timestamp)
+            stupid = dt
+            // setTimestamp(dt)
+            console.log('stupid', stupid)
 
         } catch (err) {
             console.log('something badssss happened when fetching', err)
@@ -66,8 +69,8 @@ console.log('timestamp', timestamp)
     useEffect(() => {
         const intervalId = setInterval(() => {
             //the argument for this function call will be the timestamp fetched by searching the countdown by id when clicking on the link on the index page
-            console.log('passssssssing to the functionf', timestamp)
-            updateRemainingTime(timestamp)
+            console.log('passssssssing to the functionf', stupid)
+            updateRemainingTime(stupid)
         }, 1000);
         return () => clearInterval(intervalId)
     }, [])
