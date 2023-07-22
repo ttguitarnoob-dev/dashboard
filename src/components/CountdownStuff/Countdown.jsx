@@ -10,20 +10,15 @@ const defaultRemainingTime = {
     days: '00'
 }
 
-const countdownURL = 'https://api.ttguitarnoob.cloud/countdowns'
 
 
-
-export default function Countdown({ countdownTimestampMs }) {
-    console.log('deprops', countdownTimestampMs)
+export default function Countdown() {
+    
 
     //State
     const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
     const [displayData, setDisplayData] = useState([])
-    const [timestamp, setTimestamp] = useState(0)
-
     
-
     //variables
     const { id } = useParams()
     const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/${id}`
@@ -56,7 +51,6 @@ export default function Countdown({ countdownTimestampMs }) {
         }
 
     }
-console.log('timestamp', timestamp)
     
     
     useEffect(() => {

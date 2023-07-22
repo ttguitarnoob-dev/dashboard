@@ -19,6 +19,7 @@ import NewJournal from './components/Academy/NewJournal';
 import JournalDetails from './components/Academy/JournalDetails';
 import Countdown from './components/CountdownStuff/Countdown';
 import NewCountdown from './components/CountdownStuff/NewCountdown';
+import CountdownList from './components/CountdownStuff/CountdownList';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -109,7 +110,9 @@ function App() {
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/countdown/new' element={<NewCountdown />} />
-        <Route path='/countdown/:id' element={<Countdown countdownTimestampMs={toTimestamp("07/24/2023 23:31:30")} />} />
+        <Route path='/countdown/:id' element={<Countdown />} />
+        <Route path='/countdown' element={<CountdownList />} />
+
 
       </Routes>
     </div>
