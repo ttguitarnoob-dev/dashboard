@@ -129,6 +129,7 @@ function App() {
         <Route path='/countdown/new' element={<NewCountdown />} />
         <Route path='/countdown/:id' element={<Countdown HandleDelete={HandleDelete} />} />
         <Route path='/countdown' element={<CountdownList />} />
+        <Route path='/task-random' element={<TaskRandom />} />
 
 
       </Routes>
