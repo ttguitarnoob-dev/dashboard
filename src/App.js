@@ -30,9 +30,23 @@ function App() {
   //   return dt
   // };
 
-  async function HandleDelete(id, url) {
-  
-    console.log('deleting', id, url)
+  async function HandleDelete(id, delURL) {
+    const URL = `${delURL}${id}`
+    console.log('deleting', URL)
+    try {
+
+      console.log('url', URL)
+      const options = {
+        method: "DELETE"
+      }
+
+      const response = await fetch(URL, options)
+      const results = await response.json()
+
+
+    } catch (err) {
+      console.log('something badssss happened when fetching', err)
+    }
   }
 
 
@@ -115,7 +129,7 @@ function App() {
         <Route path='/poke' element={<Poke />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/countdown/new' element={<NewCountdown />} />
-        <Route path='/countdown/:id' element={<Countdown HandleDelete={HandleDelete}/>} />
+        <Route path='/countdown/:id' element={<Countdown HandleDelete={HandleDelete} />} />
         <Route path='/countdown' element={<CountdownList />} />
 
 
