@@ -7,6 +7,23 @@ export default function Quizzer(props) {
     var initialInput = {
         title: "smellass",
         subject: "larnin'",
+        score: 32,
+        questions: [
+            {
+                question: "what is the airspeed velocity of an unladen sparrow",
+                answer: "a",
+                choice: "a",
+                choices: [
+                    {
+                        a: "smellass",
+                        b: "ugly",
+                        c: "wow that smells",
+                        d: "omg wow"
+                    }
+                ],
+                correct: true
+            }
+        ]
 
     }
 // const { HandleGet } = props
