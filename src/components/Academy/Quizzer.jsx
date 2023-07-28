@@ -7,7 +7,7 @@ export default function Quizzer(props) {
     var initialInput = {
         title: "smellass",
         subject: "larnin'",
-        
+
     }
 // const { HandleGet } = props
 
@@ -17,7 +17,7 @@ export default function Quizzer(props) {
 
 
 const HandlePost = async (data) => {
-    
+    const postURL = "http://localhost:8000/quizzes"
     try{
         const options = {
             method: "POST",
@@ -39,7 +39,7 @@ const HandlePost = async (data) => {
 
 
 
-console.log('datataa', data)
+
 
     return <div>
         <h2>Hello Quizzerr</h2>
