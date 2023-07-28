@@ -14,6 +14,7 @@ import JournalDetails from './components/Academy/JournalDetails';
 import Countdown from './components/CountdownStuff/Countdown';
 import NewCountdown from './components/CountdownStuff/NewCountdown';
 import CountdownList from './components/CountdownStuff/CountdownList';
+import Quizzer from './components/Academy/Quizzer';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
   //   return dt
   // };
 
-  async function HandleDelete(delURL) {
+  const HandleDelete = async (delURL) => {
     
     console.log('deleting', delURL)
     try {
@@ -35,13 +36,30 @@ function App() {
       const response = await fetch(delURL, options)
       const results = await response.json()
       console.log('result?', results)
+      
 
 
     } catch (err) {
-      console.log('something badssss happened when fetching', err)
+      console.log('something badassss happened when fetching', err)
     }
   }
 
+  //Fetch api
+  // const HandlePost = async (postURL) => {
+    
+  //   try{
+  //     const options = {
+  //       method: "POST",
+  //     }
+  //     const response = await fetch(postURL, options)
+  //     const results = await response.json()
+  //     console.log('relusts', results)
+  //     return results
+
+  //   } catch(err) {
+  //     console.log("something broke when posting", err)
+  //   }
+  // }
 
 
 
@@ -116,6 +134,7 @@ function App() {
         <Route path='/academy/journal/:id' element={<JournalDetails />} />
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/academy/journal/new' element={<NewJournal />} />
+        <Route path='/academy/quizzer' element={<Quizzer  />} />
         <Route path='/academy' element={<Academy />} />
         <Route path='/kiara' element={<Kiara />} />
         <Route path='/' element={<Trav />} />
