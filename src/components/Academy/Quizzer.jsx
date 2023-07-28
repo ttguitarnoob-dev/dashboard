@@ -13,16 +13,16 @@ export default function Quizzer(props) {
                 question: "what is the airspeed velocity of an unladen sparrow",
                 answer: "a",
                 choice: "a",
-                choices: [
+                choices:
                     {
                         a: "smellass",
                         b: "ugly",
                         c: "wow that smells",
                         d: "omg wow"
-                    }
-                ],
+                    },
                 correct: true
-            }
+            },
+            
         ]
 
     }
@@ -32,6 +32,16 @@ export default function Quizzer(props) {
 //     HandleGet("http://localhost:8000/quizzes")
 // }, [])
 
+const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log("Submitted", initialInput)
+    const formBody = Object.keys(initialInput).map(key =>
+        encodeURIComponent(key) + '=' +
+        encodeURIComponent(initialInput[key])).join('&')
+    
+    HandlePost(formBody)
+
+}
 
 const HandlePost = async (data) => {
     const postURL = "http://localhost:8000/quizzes"
@@ -60,5 +70,8 @@ const HandlePost = async (data) => {
 
     return <div>
         <h2>Hello Quizzerr</h2>
+        <form onSubmit={handleSubmit}>
+            <button>Submit!</button>
+        </form>
     </div>
 }
