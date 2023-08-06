@@ -5,25 +5,10 @@ import { useFetcher } from "react-router-dom"
 export default function Quizzer(props) {
 
     var initialInput = {
-        title: "smellass",
+        title: "pooey",
         subject: "larnin'",
-        score: 32,
-        questions: [
-            {
-                question: "what is the airspeed velocity of an unladen sparrow",
-                answer: "a",
-                choice: "a",
-                choices:
-                    {
-                        a: "smellass",
-                        b: "ugly",
-                        c: "wow that smells",
-                        d: "omg wow"
-                    },
-                correct: true
-            },
-            
-        ]
+        score: 87,
+        questions: [1, 2, 3, 4, 5, 6, 7]
 
     }
 // const { HandleGet } = props
@@ -39,23 +24,24 @@ const handleSubmit = (e) => {
         encodeURIComponent(key) + '=' +
         encodeURIComponent(initialInput[key])).join('&')
     
-    HandlePost(formBody)
+    HandlePost(initialInput)
 
 }
 
 const HandlePost = async (data) => {
+    console.log('start of post function', data)
     const postURL = "http://localhost:8000/quizzes"
     try{
         const options = {
             method: "POST",
             body: data,
             // mode: "cors",
-            headers: {
-                "Content-type": "application/x-www-form-urlencoded"
-            }
+            // headers: {
+            //     "Content-type": "application/x-www-form-urlencoded"
+            // }
         }
       const response = await fetch(postURL, options)
-      const results = await response.json()
+      const results = await response.text()
       console.log('relusts', results)
       return results
 
