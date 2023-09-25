@@ -68,7 +68,7 @@ console.log('props', props)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        HandleDelete(countdownURL)
+        HandleDelete(countdownURL, "/countdown")
     }
 
 

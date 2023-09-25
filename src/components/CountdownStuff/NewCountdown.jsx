@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom"
+
 export default function NewCountdown() {
     
 
 
     var initialInput = {}
     const journalURL = "https://api.ttguitarnoob.cloud/countdowns"
+    const navigate = useNavigate()
 
 
 
@@ -42,6 +45,7 @@ export default function NewCountdown() {
             const createdCountdown = await fetch(URL, options)
             const parsedCountdown = await createdCountdown.json()
             console.log('I guess it worked', parsedCountdown)
+            navigate("/countdown")
             // handleFetch()
         } catch (err) {
             console.log('create todo error', err)

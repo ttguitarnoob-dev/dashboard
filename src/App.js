@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from "react"
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import TravNav from './components/TravNav';
 import Trav from './components/Trav';
 import Budget from './components/Budget';
@@ -19,13 +19,15 @@ import Quizzer from './components/Academy/Quizzer';
 
 function App() {
 
+  const navigate = useNavigate()
+
   //getting timestamp of hardcoded date for countdown component props
   // const toTimestamp = (strDate) => {
   //   const dt = new Date(strDate).getTime();
   //   return dt
   // };
 
-  const HandleDelete = async (delURL) => {
+  const HandleDelete = async (delURL, navURL) => {
     
     console.log('deleting', delURL)
     try {
@@ -36,6 +38,7 @@ function App() {
       const response = await fetch(delURL, options)
       const results = await response.json()
       console.log('result?', results)
+      navigate(navURL)
       
 
 
