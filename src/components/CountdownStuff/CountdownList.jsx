@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import LiveCountdown from "./LiveCountdown"
 
 
 export default function CountdownList() {
@@ -48,7 +49,9 @@ export default function CountdownList() {
                     // <a href={`/academy/journal/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
                     <li className="journal-entry" key={countdown._id}>
 
-                        <a href={`/countdown/${countdown._id}`} ><button>{countdown.title}</button></a>
+                        <a href={`/countdown/${countdown._id}`} >
+                            <LiveCountdown id = {countdown._id} />
+                        </a>
                     </li>
                 ))}
 

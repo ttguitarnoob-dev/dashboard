@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { getRemainingTime } from "./CountDownUtils"
-import { useParams } from "react-router-dom"
 
 
 const defaultRemainingTime = {
@@ -12,7 +11,7 @@ const defaultRemainingTime = {
 
 
 
-export default function Countdown(props) {
+export default function LiveCountdown(props) {
     
 console.log('props', props)
 
@@ -21,8 +20,7 @@ console.log('props', props)
     const [displayData, setDisplayData] = useState([])
     
     //variables
-    const { HandleDelete } = props
-    const { id } = useParams()
+    const { id } = props
     const countdownURL = `https://api.ttguitarnoob.cloud/countdowns/${id}`
     var stupid = 0
 
@@ -66,18 +64,11 @@ console.log('props', props)
         setRemainingTime(getRemainingTime(countdown))
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        HandleDelete(countdownURL, "/countdown")
-    }
-
 
 
     return <div className="countdown-card">
         <div className="container">
-            <a href="/countdown"><button>Countdowns</button></a>
-            <h2>{displayData.title}</h2>
-            <h1>You can't wait for {displayData.date}!!</h1>
+            <h1>You can't wait for {displayData.title} on {displayData.date}!!</h1>
             <div className="countdown">
             
 
@@ -90,11 +81,6 @@ console.log('props', props)
                 <span>{remainingTime.seconds}</span>
                 <span>seconds</span>
             </div>
-        </div>
-        <div>
-            <form onSubmit={handleSubmit}>
-                <button>Delete Countdown</button>
-            </form>
         </div>
     </div>
 }
