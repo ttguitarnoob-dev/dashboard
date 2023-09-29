@@ -31,7 +31,7 @@ export default function NewJournal() {
         const options = {
             method: "POST",
             body: JSON.stringify(data),
-            // mode: "cors",
+            mode: "cors",
             headers: {
                 "Content-type": "application/json"
             }
