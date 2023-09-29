@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 export default function NewJournal() {
 
     var initialInput = {}
-    const journalURL = "http://localhost:8000/kizzi-journals"
+    const journalURL = "https://api.ttguitarnoob.cloud/kizzi-journals"
     const navigate = useNavigate()
 
 
