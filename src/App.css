@@ -256,3 +256,15 @@ textarea {
   height: 10rem;
   padding: 2rem;
 }
+
+.journal-items {
+  background-color: rgb(127, 22, 113);
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1.3rem;
+}
+
+.journal-items:hover {
+transform: scale(1.2);
+}

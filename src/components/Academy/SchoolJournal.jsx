@@ -19,7 +19,7 @@ export default function SchoolJournal() {
             const options = {
                 method: "GET"
             }
-            
+
             const response = await fetch(URL, options)
             const results = await response.json()
             var array = results.map(journal => journal)
@@ -39,22 +39,31 @@ export default function SchoolJournal() {
     }, [])
 
 
+    if (journalList.length < 1) {
+        return <div className="journal-items">
+            <h1>Loading the musings of sexy teacher lady....</h1>
+        </div>
+    }
 
-
-    return <div>
+    return <div className="container">
         <h2>The Journal of the Prettiest Teacher in the Land!</h2>
         <div>
-            <a href="/academy/journal/new">New Journal</a>
+            <a href="/academy/journal/new"><button>New Journal</button></a>
         </div>
 
         <h3>Look back at your old journals!</h3>
         <div className="journal-list">
-            <ul>
+            <ul className="trav-buttons">
                 {journalList && journalList.map((journal, index) => (
-                    // <a href={`/academy/journal/${journal._id}`} key={journal._id}><li>{journal.date}</li></a>
-                    <li key={journal._id}>
-                    <Link to={`/academy/journal/${journal._id}`}>{journal.date}</Link>
-                    </li>
+
+                    <Link to={`/academy/journal/${journal._id}`}>
+                        <div className="journal-items">
+                            <li className="main-buttons" key={journal._id}>
+                                {journal.date}
+                            </li>
+                        </div>
+                    </Link>
+
                 ))}
             </ul>
         </div>
