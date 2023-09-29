@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom"
+
 export default function NewJournal() {
 
     var initialInput = {}
-    const journalURL = "https://api.ttguitarnoob.cloud/journals"
+    const journalURL = "http://localhost:8000/kizzi-journals"
+    const navigate = useNavigate()
 
 
     const handleChange = (e) => {
@@ -16,11 +19,9 @@ export default function NewJournal() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("Submitted", initialInput)
-        const formBody = Object.keys(initialInput).map(key =>
-            encodeURIComponent(key) + '=' +
-            encodeURIComponent(initialInput[key])).join('&')
-        
-        createItem(formBody)
+        initialInput.date = new Date(`${e.target[1].value}T00:00:00`).toLocaleDateString()
+        console.log('blee', initialInput)
+        createItem(initialInput)
 
     }
 
@@ -29,17 +30,18 @@ export default function NewJournal() {
         const URL = journalURL
         const options = {
             method: "POST",
-            body: data,
+            body: JSON.stringify(data),
             // mode: "cors",
             headers: {
-                "Content-type": "application/x-www-form-urlencoded"
+                "Content-type": "application/json"
             }
         }
         try {
             const createdJournal = await fetch(URL, options)
-            console.log("it's working so far", createdJournal)
+            console.log("it's working so far", options)
             const parsedJournal = await createdJournal.json()
             console.log("what is the data I'm trying to send", parsedJournal)
+            navigate('/academy/journal')
 
         } catch (err) {
             console.log('error creating journal', err)
@@ -47,67 +49,35 @@ export default function NewJournal() {
         console.log('Journal created', data)
     }
 
-    console.log('smelljournalnewthing')
-
     return <div>
         <div>
             <h2>New Learning Journal</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <ul>
+                    
                     <li>
-                        <label htmlFor="hilow">What was your high and low today?</label>
-                        <input
-                            name="hilow"
-                            id="hilow"
-                            type="text"
-                            placeholder="Enter response here"
-                            onChange={handleChange}
-                        />
-                    </li>
-                    <li>
-                        <label htmlFor="learn">What Did You Learn at School Today?</label>
+                        <label htmlFor="entry">What happened at KC Academy today?</label>
                         <textarea
-                            name="learn"
-                            id="learn"
+                            name="entry"
+                            id="entry"
                             type="textarea"
                             placeholder="Enter response here"
                             onChange={handleChange}
                         />
                     </li>
                     <li>
-                        <label htmlFor="fail">Name one thing that you failed at today.</label>
+                        <label htmlFor="date">What date is this entry for?</label>
                         <input
-                            name="fail"
-                            id="fail"
-                            type="text"
+                            name="date"
+                            id="date"
+                            type="date"
                             placeholder="Enter response here"
                             onChange={handleChange}
                         />
                     </li>
-                    <li>
-                        <label htmlFor="failTeach">What did failing teach you?.</label>
-                        <input
-                            name="failTeach"
-                            id="failTeach"
-                            type="text"
-                            placeholder="Enter response here"
-                            onChange={handleChange}
-                        />
-                    </li>
-                    <li>
-                        <label htmlFor="failImprove">How can you improve next time?</label>
-                        <input
-                            name="failImprove"
-                            id="failImprove"
-                            type="text"
-                            placeholder="Enter response here"
-                            onChange={handleChange}
-                        />
-                    </li>
-                    <li>
-                        <button onClick={handleSubmit}>Submit</button>
-                    </li>
+                    
                 </ul>
+                <button>Submit</button>
             </form>
             <div>
                 <a href="/academy/journal">Back to Learning Journal</a>

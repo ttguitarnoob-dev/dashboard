@@ -11,7 +11,7 @@ export default function SchoolJournal() {
 
     console.log("smellass", smell)
 
-    const journalURL = "https://api.ttguitarnoob.cloud/journals"
+    const journalURL = "https://api.ttguitarnoob.cloud/kizzi-journals"
 
     async function handleFetch() {
         try {
@@ -42,7 +42,7 @@ export default function SchoolJournal() {
 
 
     return <div>
-        <h2>Learning Journal</h2>
+        <h2>The Journal of the Prettiest Teacher in the Land!</h2>
         <div>
             <a href="/academy/journal/new">New Journal</a>
         </div>
