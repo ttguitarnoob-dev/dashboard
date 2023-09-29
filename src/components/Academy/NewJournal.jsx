@@ -14,7 +14,7 @@ export default function NewJournal() {
         console.log('omgchanged', initialInput)
     }
 
-  
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -49,23 +49,26 @@ export default function NewJournal() {
         console.log('Journal created', data)
     }
 
-    return <div>
+    return <div className="container">
+        <h2>New Learning Journal</h2>
         <div>
-            <h2>New Learning Journal</h2>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    
-                    <li>
-                        <label htmlFor="entry">What happened at KC Academy today?</label>
+            <a href="/academy/journal"><button>Back to Learning Journal</button></a>
+        </div>
+        <div className="form">
+
+            <form className="journal-form" onSubmit={handleSubmit}>
+                <ul className="form-items">
+
+                    <li className="journal-input" >
                         <textarea
                             name="entry"
                             id="entry"
                             type="textarea"
-                            placeholder="Enter response here"
+                            placeholder="What happened at KC Academy today?"
                             onChange={handleChange}
                         />
                     </li>
-                    <li>
+                    <li className="journal-input">
                         <label htmlFor="date">What date is this entry for?</label>
                         <input
                             name="date"
@@ -75,13 +78,11 @@ export default function NewJournal() {
                             onChange={handleChange}
                         />
                     </li>
-                    
+
                 </ul>
                 <button>Submit</button>
             </form>
-            <div>
-                <a href="/academy/journal">Back to Learning Journal</a>
-            </div>
+
         </div>
     </div>
 

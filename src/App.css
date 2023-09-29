@@ -25,6 +25,9 @@ body {
   text-align: center;
 }
 
+label {
+  color: black;
+}
 
 button {
   background-color: rgb(185, 144, 218);
@@ -60,6 +63,7 @@ li {
   height: 80px;
   border-radius: 30px;
   border: solid 5px rgb(0, 17, 255);
+  
 }
 
 .dash-items {
@@ -250,21 +254,52 @@ tr:nth-child(even) {
 }
 
 textarea {
-  width: 30rem;
+  width: 77vw;
   border: 1px solid black;
   border-radius: 40px;
-  height: 10rem;
+  height: 19rem;
   padding: 2rem;
 }
 
+
+
 .journal-items {
   background-color: rgb(127, 22, 113);
-  margin: 1rem;
+  margin: 2rem;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 1.3rem;
+  width: 100%;
 }
 
 .journal-items:hover {
 transform: scale(1.2);
+}
+
+.journal-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.form-items {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.journal-input[textarea] {
+  margin-top: 1rem;
+  width: 97%;
 }

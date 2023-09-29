@@ -50,7 +50,7 @@ export default function SchoolJournal() {
         <div>
             <a href="/academy/journal/new"><button>New Journal</button></a>
         </div>
-
+ 
         <h3>Look back at your old journals!</h3>
         <div className="journal-list">
             <ul className="trav-buttons">
