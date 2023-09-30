@@ -303,3 +303,11 @@ transform: scale(1.2);
   margin-top: 1rem;
   width: 97%;
 }
+
+.journal-container {
+  background-color: #bcc4f0;
+  margin-top: 4rem;
+  padding: 3rem;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
