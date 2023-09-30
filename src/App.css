@@ -305,6 +305,10 @@ transform: scale(1.2);
 }
 
 .journal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: #bcc4f0;
   margin-top: 4rem;
   padding: 3rem;

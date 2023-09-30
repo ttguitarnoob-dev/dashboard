@@ -50,39 +50,41 @@ export default function NewJournal() {
     }
 
     return <div className="container">
-        <h2>New Learning Journal</h2>
-        <div>
-            <a href="/academy/journal"><button>Back to Learning Journal</button></a>
-        </div>
-        <div className="form">
+        <div className="journal-container">
+            <h2>New Learning Journal</h2>
+            <div>
+                <a href="/academy/journal"><button>Back to Learning Journal</button></a>
+            </div>
+            <div className="form">
 
-            <form className="journal-form" onSubmit={handleSubmit}>
-                <ul className="form-items">
+                <form className="journal-form" onSubmit={handleSubmit}>
+                    <ul className="form-items">
 
-                    <li className="journal-input" >
-                        <textarea
-                            name="entry"
-                            id="entry"
-                            type="textarea"
-                            placeholder="What happened at KC Academy today?"
-                            onChange={handleChange}
-                        />
-                    </li>
-                    <li className="journal-input">
-                        <label htmlFor="date">What date is this entry for?</label>
-                        <input
-                            name="date"
-                            id="date"
-                            type="date"
-                            placeholder="Enter response here"
-                            onChange={handleChange}
-                        />
-                    </li>
+                        <li className="journal-input" >
+                            <textarea
+                                name="entry"
+                                id="entry"
+                                type="textarea"
+                                placeholder="What happened at KC Academy today?"
+                                onChange={handleChange}
+                            />
+                        </li>
+                        <li className="journal-input">
+                            <label htmlFor="date">What date is this entry for?</label>
+                            <input
+                                name="date"
+                                id="date"
+                                type="date"
+                                placeholder="Enter response here"
+                                onChange={handleChange}
+                            />
+                        </li>
 
-                </ul>
-                <button>Submit</button>
-            </form>
+                    </ul>
+                    <button>Submit</button>
+                </form>
 
+            </div>
         </div>
     </div>
 
