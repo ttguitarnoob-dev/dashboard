@@ -52,9 +52,8 @@ export default function Quizzer(props) {
             setPage(1)
         } else {
             console.log('poooo', e.target[1].value)
-            setData({title: e.target[0].value, subject: e.target[1].value, date: new Date(e.target[2].value).toLocaleDateString()})
+            setData({...data, title: e.target[0].value, subject: e.target[1].value, date: new Date(e.target[2].value).toLocaleDateString()})
             setPage(prev => prev + 1)
-            console.log('daaate', data)
         }
     }
 
@@ -91,7 +90,7 @@ export default function Quizzer(props) {
         }
     }
 
-
+console.log('daddaa', data)
     let Form
     switch (page) {
         case 0:
@@ -100,6 +99,8 @@ export default function Quizzer(props) {
         case 1:
             Form = <QuestionForm />
             break
+        default:
+            Form = <TitleForm />
     }
 
 
