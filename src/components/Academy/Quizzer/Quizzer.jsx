@@ -6,6 +6,7 @@ import QuestionForm from "./QuestionForm"
 
 export default function Quizzer(props) {
 
+    const questionForm = document.getElementById("question-form")
     const [page, setPage] = useState(0)
     const [data, setData] = useState({
         title: "",
@@ -48,6 +49,7 @@ export default function Quizzer(props) {
     }
 
     const handleNext = (e) => {
+        e.preventDefault()
         if (page === 1) {
             setPage(1)
         } else {
@@ -64,6 +66,12 @@ export default function Quizzer(props) {
             setPage(prev => prev - 1)
         }
 
+    }
+
+    const handleNewQuestion = (e) => {
+        e.preventDefault()
+        data.questions.push({question: e.target[0].value, answer: e.target[1].value, choices: {a: e.target[2].value, b: e.target[3].value, c: e.target[4].value, d: e.target[5].value}})
+        console.log('new question added', data)
     }
 
     const HandlePost = async (data) => {
@@ -97,7 +105,10 @@ console.log('daddaa', data)
             Form = <TitleForm page={page} handleNext={event => handleNext(event)} />
             break
         case 1:
-            Form = <QuestionForm />
+            Form = <QuestionForm 
+            handlePrevious={handlePrevious}
+            handleNewQuestion={event => handleNewQuestion(event)}
+            />
             break
         default:
             Form = <TitleForm />
