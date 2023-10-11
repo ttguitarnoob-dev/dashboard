@@ -25,7 +25,7 @@ export default function Quizzer(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Submitted", data)
+        console.log("Submitted", data.date)
 
         handlePost(data)
     }
