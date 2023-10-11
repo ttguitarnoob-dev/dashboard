@@ -16,25 +16,7 @@ export default function Quizzer(props) {
         questions: []
     })
 
-    var initialInput = {
-        title: "SMELLASS",
-        subject: "looornan'",
-        score: 0,
-        questions: [{
-            question: "what is your favorite color",
-            answer: "a",
-            choice: "a",
-            choices: { a: "orange", b: "your other mom", c: "black", d: "laksdjf" }
-        },
-        {
-            question: "what is your favorite FOOD",
-            answer: "b",
-            choice: "a",
-            choices: { a: "orange", b: "your other mom", c: "MACARONI AND CHEESE", d: "oidjfoi" }
-        }
-        ]
-
-    }
+    
     // const { HandleGet } = props
 
     // const data = useEffect(() => {
@@ -43,7 +25,7 @@ export default function Quizzer(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Submitted", initialInput)
+        console.log("Submitted")
 
         // HandlePost(initialInput)
     }
@@ -54,7 +36,7 @@ export default function Quizzer(props) {
             setPage(1)
         } else {
             console.log('poooo', e.target[1].value)
-            setData({...data, title: e.target[0].value, subject: e.target[1].value, date: new Date(e.target[2].value).toLocaleDateString()})
+            setData({...data, title: e.target[0].value, subject: e.target[1].value, date: e.target[2].value})
             setPage(prev => prev + 1)
         }
     }
@@ -102,7 +84,9 @@ console.log('daddaa', data)
     let Form
     switch (page) {
         case 0:
-            Form = <TitleForm page={page} handleNext={event => handleNext(event)} />
+            Form = <TitleForm
+             data={data}
+             handleNext={event => handleNext(event)} />
             break
         case 1:
             Form = <QuestionForm 
