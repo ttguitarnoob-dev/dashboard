@@ -27,7 +27,7 @@ export default function Quizzer(props) {
         e.preventDefault()
         console.log("Submitted", data)
 
-        // HandlePost(data)
+        handlePost(data)
     }
 
     const handleNext = (e) => {
@@ -56,7 +56,7 @@ export default function Quizzer(props) {
         console.log('new question added', data)
     }
 
-    const HandlePost = async (data) => {
+    const handlePost = async (data) => {
         console.log('start of post function', data.title)
         const postURL = "https://api.ttguitarnoob.cloud/quizzes"
 
