@@ -92,6 +92,7 @@ console.log('daddaa', data)
             Form = <QuestionForm 
             handlePrevious={handlePrevious}
             handleNewQuestion={event => handleNewQuestion(event)}
+            questions={data.questions}
             />
             break
         default:

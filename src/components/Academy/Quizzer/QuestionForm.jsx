@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function QuestionForm({handlePrevious, handleNewQuestion}){
+export default function QuestionForm({ questions, handlePrevious, handleNewQuestion }){
 
     const [formState, setFormState] = useState({
         question: "",
@@ -79,6 +79,23 @@ export default function QuestionForm({handlePrevious, handleNewQuestion}){
                 />
                 <button >Add The Question</button>
             </form>
+            <div>
+                <h3>Currently Added Questions:</h3>
+                {questions && questions.map((oneItem, index) => (
+                    
+                    <div className="store-div" key={index}>
+                        <h3>Question {index + 1}:</h3>
+                        <p className="store-p">Question: {oneItem.question}</p>
+                        <p className="store-p">Answer: {oneItem.answer}</p>
+                        <p className="store-p">Choice A: {oneItem.choices.a}</p>
+                        <p className="store-p">Choice B: {oneItem.choices.b}</p>
+                        <p className="store-p">Choice C: {oneItem.choices.c}</p>
+                        <p className="store-p">Choice D: {oneItem.choices.d}</p>
+                </div>
+
+                
+            ))}
+            </div>
         </div>
     )
 }
