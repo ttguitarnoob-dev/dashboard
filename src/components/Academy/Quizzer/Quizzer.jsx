@@ -1,8 +1,19 @@
 import { useState, useEffect } from "react"
 import { useFetcher } from "react-router-dom"
+import TitleForm from "./TitleForm"
+import QuestionForm from "./QuestionForm"
 
 
 export default function Quizzer(props) {
+
+    const [page, setPage] = useState(0)
+    const [data, setData] = useState({
+        title: "",
+        date: "",
+        subject: "",
+        score: 0,
+        questions: []
+    })
 
     var initialInput = {
         title: "SMELLASS",
@@ -33,13 +44,32 @@ export default function Quizzer(props) {
         e.preventDefault()
         console.log("Submitted", initialInput)
 
-        HandlePost(initialInput)
+        // HandlePost(initialInput)
+    }
+
+    const handleNext = (e) => {
+        if (page === 1) {
+            setPage(1)
+        } else {
+            console.log('poooo', e.target[1].value)
+            setData({title: e.target[0].value, subject: e.target[1].value, date: new Date(e.target[2].value).toLocaleDateString()})
+            setPage(prev => prev + 1)
+            console.log('daaate', data)
+        }
+    }
+
+    const handlePrevious = () => {
+        if (page === 0){
+            setPage(0)
+        } else {
+            setPage(prev => prev - 1)
+        }
 
     }
 
     const HandlePost = async (data) => {
         console.log('start of post function', data.title)
-        const postURL = "http://localhost:8000/quizzes"
+        const postURL = "https://api.ttguitarnoob.cloud/quizzes"
 
         try {
             const options = {
@@ -62,13 +92,25 @@ export default function Quizzer(props) {
     }
 
 
+    let Form
+    switch (page) {
+        case 0:
+            Form = <TitleForm page={page} handleNext={event => handleNext(event)} />
+            break
+        case 1:
+            Form = <QuestionForm />
+            break
+    }
 
 
-
-    return <div>
-        <h2>Hello Quizzerr</h2>
-        <form onSubmit={handleSubmit}>
-            <button>Submit!</button>
-        </form>
-    </div>
+    return (
+        <div>
+            <div>
+                <button onClick={handlePrevious}>Back</button>
+                <button onClick={handleNext}>Next</button>
+                
+            </div>
+            {Form}
+        </div>
+    )
 }

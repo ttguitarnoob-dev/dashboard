@@ -14,7 +14,7 @@ import JournalDetails from './components/Academy/JournalDetails';
 import Countdown from './components/CountdownStuff/Countdown';
 import NewCountdown from './components/CountdownStuff/NewCountdown';
 import CountdownList from './components/CountdownStuff/CountdownList';
-import Quizzer from './components/Academy/Quizzer';
+import Quizzer from './components/Academy/Quizzer/Quizzer';
 // import Prodigy from './components/Prodigy';
 
 function App() {
