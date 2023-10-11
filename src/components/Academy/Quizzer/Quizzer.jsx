@@ -25,9 +25,9 @@ export default function Quizzer(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Submitted")
+        console.log("Submitted", data)
 
-        // HandlePost(initialInput)
+        // HandlePost(data)
     }
 
     const handleNext = (e) => {
@@ -52,7 +52,7 @@ export default function Quizzer(props) {
 
     const handleNewQuestion = (e) => {
         e.preventDefault()
-        data.questions.push({question: e.target[0].value, answer: e.target[1].value, choices: {a: e.target[2].value, b: e.target[3].value, c: e.target[4].value, d: e.target[5].value}})
+        data.questions.push({question: e.target[0].value, answer: e.target[1].value, choices: {a: e.target[2].value, b: e.target[3].value, c: e.target[4].value, d: e.target[5].value}, correct: false, choice: -1})
         console.log('new question added', data)
     }
 
@@ -93,6 +93,7 @@ console.log('daddaa', data)
             handlePrevious={handlePrevious}
             handleNewQuestion={event => handleNewQuestion(event)}
             questions={data.questions}
+            handleSubmit={handleSubmit}
             />
             break
         default:
