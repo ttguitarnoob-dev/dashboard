@@ -79,6 +79,10 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                     setFormState({ ...formState, d: e.target.value})
                 }}
                 />
+                <label for="answer">Choose The Correct Answer</label>
+                <select name="answer" id="answer">
+                    <option value={`A: ${formState.a}`}>A: {formState.a}</option>
+                </select>
                 <button >Add The Question</button>
             </form>
             <button onClick={handleSubmit}>Finalize The Quiz</button>
