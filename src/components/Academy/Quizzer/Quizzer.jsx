@@ -6,7 +6,7 @@ import QuestionForm from "./QuestionForm"
 
 export default function Quizzer(props) {
 
-    const questionForm = document.getElementById("question-form")
+    // const questionForm = document.getElementById("question-form")
     const [page, setPage] = useState(0)
     const [data, setData] = useState({
         title: "",
@@ -50,9 +50,10 @@ export default function Quizzer(props) {
 
     }
 
-    const handleNewQuestion = (e) => {
+    const handleNewQuestion = (e, answer) => {
         e.preventDefault()
-        data.questions.push({question: e.target[0].value, answer: e.target[1].value, choices: {a: e.target[2].value, b: e.target[3].value, c: e.target[4].value, d: e.target[5].value}, correct: false, choice: -1})
+        console.log('targets', e.target, answer)
+        data.questions.push({question: e.target[0].value, answer: parseInt(e.target[1].value), choices:  [e.target[2].value, e.target[3].value, e.target[4].value, e.target[5].value], correct: false, choice: -1})
         console.log('new question added', data)
     }
 

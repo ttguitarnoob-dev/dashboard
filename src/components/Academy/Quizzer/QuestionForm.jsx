@@ -1,6 +1,7 @@
 import { useState } from "react"
 
 export default function QuestionForm({ questions, handlePrevious, handleNewQuestion, handleSubmit }){
+    var index = document.getElementById("answer")
 
     const [formState, setFormState] = useState({
         question: "",
@@ -12,7 +13,12 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
     })
 
     function handleAddQuestion(e){
-        console.log('what submit', formState)
+        e.preventDefault()
+        
+        const answer = index.selectedIndex
+        const answerField = document.getElementById("answer-field")
+        answerField.value = answer
+        console.log('what submit', e.target)
         setFormState({
             question: "",
         answer: "",
@@ -21,7 +27,9 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
         c: "",
         d: ""
         })
-        handleNewQuestion(e)
+        console.log('slelcted', answer)
+
+        handleNewQuestion(e, answer)
     }
 
     
@@ -41,7 +49,9 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                 />
                 <input
                 type="text"
+                id="answer-field"
                 placeholder="Answer (Make sure this is copy/pasted exactly to the correct choice field below)"
+                style={{color: 'black', visibility: 'hidden'}}
                 value={formState.answer}
                 onChange={(e) => {
                     setFormState({ ...formState, answer: e.target.value})
@@ -82,6 +92,9 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                 <label for="answer">Choose The Correct Answer</label>
                 <select name="answer" id="answer">
                     <option value={`A: ${formState.a}`}>A: {formState.a}</option>
+                    <option value={`B: ${formState.b}`}>B: {formState.b}</option>
+                    <option value={`C: ${formState.c}`}>C: {formState.c}</option>
+                    <option value={`D: ${formState.d}`}>D: {formState.d}</option>
                 </select>
                 <button >Add The Question</button>
             </form>
@@ -93,11 +106,11 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                     <div className="store-div" key={index}>
                         <h3>Question {index + 1}:</h3>
                         <p className="store-p">Question: {oneItem.question}</p>
-                        <p className="store-p">Answer: {oneItem.answer}</p>
-                        <p className="store-p">Choice A: {oneItem.choices.a}</p>
-                        <p className="store-p">Choice B: {oneItem.choices.b}</p>
-                        <p className="store-p">Choice C: {oneItem.choices.c}</p>
-                        <p className="store-p">Choice D: {oneItem.choices.d}</p>
+                        <p className="store-p">Answer: {oneItem.choices[oneItem.answer]}</p>
+                        <p className="store-p">Choice A: {oneItem.choices[0]}</p>
+                        <p className="store-p">Choice B: {oneItem.choices[1]}</p>
+                        <p className="store-p">Choice C: {oneItem.choices[2]}</p>
+                        <p className="store-p">Choice D: {oneItem.choices[3]}</p>
                 </div>
 
                 
