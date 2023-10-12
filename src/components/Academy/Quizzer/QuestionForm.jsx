@@ -29,7 +29,7 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
         })
         console.log('slelcted', answer)
 
-        handleNewQuestion(e, answer)
+        handleNewQuestion(e)
     }
 
     

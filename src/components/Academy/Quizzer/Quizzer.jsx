@@ -51,9 +51,8 @@ export default function Quizzer(props) {
 
     }
 
-    const handleNewQuestion = (e, answer) => {
+    const handleNewQuestion = (e) => {
         e.preventDefault()
-        console.log('targets', e.target, answer)
         data.questions.push({question: e.target[0].value, answer: parseInt(e.target[1].value), choices:  [e.target[2].value, e.target[3].value, e.target[4].value, e.target[5].value], correct: false, choice: -1})
         console.log('new question added', data)
     }
