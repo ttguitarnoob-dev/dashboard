@@ -13,7 +13,6 @@ export default function Quizzes() {
 
         const responst = await fetch(URL, options)
         const data = await responst.json()
-        console.log('data rertieved', data)
         setQuizzes(data)
 
     }
@@ -27,9 +26,6 @@ export default function Quizzes() {
             <h1>Quizzes</h1>
             <a href="/academy/quizzer"><button>New Quiz</button></a>
             <div className="thing">
-                {/* {quizzes && quizzes.map((oneQuiz, index) => (
-                    
-                ))} */}
                 {quizzes && quizzes.map((oneQuiz, index) => (
 
                     <div className="detail-card" key={index}>
@@ -40,8 +36,6 @@ export default function Quizzes() {
                         <p>Score: {oneQuiz.score}</p>
                         
                     </div>
-
-
                 ))}
             </div>
         </div>

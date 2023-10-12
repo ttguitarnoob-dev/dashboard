@@ -4,10 +4,9 @@ import TitleForm from "./TitleForm"
 import QuestionForm from "./QuestionForm"
 
 
-export default function Quizzer(props) {
+export default function Quizzer() {
 
     const navigate = useNavigate()
-    // const questionForm = document.getElementById("question-form")
     const [page, setPage] = useState(0)
     const [data, setData] = useState({
         title: "",
@@ -16,18 +15,9 @@ export default function Quizzer(props) {
         score: 0,
         questions: []
     })
-
     
-    // const { HandleGet } = props
-
-    // const data = useEffect(() => {
-    //     HandleGet("http://localhost:8000/quizzes")
-    // }, [])
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("Submitted", data)
-
         handlePost(data)
     }
 
@@ -36,7 +26,6 @@ export default function Quizzer(props) {
         if (page === 1) {
             setPage(1)
         } else {
-            console.log('poooo', e.target[1].value)
             setData({...data, title: e.target[0].value, subject: e.target[1].value, date: e.target[2].value})
             setPage(prev => prev + 1)
         }
@@ -54,11 +43,10 @@ export default function Quizzer(props) {
     const handleNewQuestion = (e) => {
         e.preventDefault()
         data.questions.push({question: e.target[0].value, answer: parseInt(e.target[1].value), choices:  [e.target[2].value, e.target[3].value, e.target[4].value, e.target[5].value], correct: false, choice: -1})
-        console.log('new question added', data)
+        
     }
 
     const handlePost = async (data) => {
-        console.log('start of post function', data.title)
         const postURL = "https://api.ttguitarnoob.cloud/quizzes"
 
         try {
@@ -72,8 +60,6 @@ export default function Quizzer(props) {
             }
             const response = await fetch(postURL, options)
             const results = await response.json()
-            console.log('data', data)
-            console.log('results', results)
             navigate('/academy/quizzes')
             return results
 

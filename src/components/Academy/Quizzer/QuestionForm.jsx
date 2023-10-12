@@ -18,7 +18,6 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
         const answer = index.selectedIndex
         const answerField = document.getElementById("answer-field")
         answerField.value = answer
-        console.log('what submit', e.target)
         setFormState({
             question: "",
             answer: "",
@@ -27,7 +26,6 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
             c: "",
             d: ""
         })
-        console.log('slelcted', answer)
 
         handleNewQuestion(e)
     }
@@ -38,7 +36,7 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
         <div className="container">
             <div className="quiz-card">
                 <h2>Add A Question</h2>
-                <button onClick={handlePrevious}>Backdd</button>
+                <button onClick={handlePrevious}>Back</button>
                 <form id="question-form" onSubmit={handleAddQuestion}>
                     <div className="quiz-form">
                         <input
