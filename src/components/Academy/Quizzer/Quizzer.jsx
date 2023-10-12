@@ -104,7 +104,7 @@ console.log('daddaa', data)
 
 
     return (
-        <div>
+        <div className="container">
             <div>
                 <h1>Quiz Creator!</h1>
                 <a href="/academy/quizzes"><button>Back to Quizzes Page</button></a>
