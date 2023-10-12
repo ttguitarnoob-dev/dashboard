@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
-import { useFetcher } from "react-router-dom"
+import { useFetcher, useNavigate } from "react-router-dom"
 import TitleForm from "./TitleForm"
 import QuestionForm from "./QuestionForm"
 
 
 export default function Quizzer(props) {
 
+    const navigate = useNavigate()
     // const questionForm = document.getElementById("question-form")
     const [page, setPage] = useState(0)
     const [data, setData] = useState({
@@ -74,6 +75,7 @@ export default function Quizzer(props) {
             const results = await response.json()
             console.log('data', data)
             console.log('results', results)
+            navigate('/academy/quizzes')
             return results
 
         } catch (err) {
@@ -105,9 +107,7 @@ console.log('daddaa', data)
     return (
         <div>
             <div>
-                <button onClick={handlePrevious}>Back</button>
-                <button onClick={handleNext}>Next</button>
-                
+                <h1>Quiz Creator!</h1>
             </div>
             {Form}
         </div>

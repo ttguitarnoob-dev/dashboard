@@ -57,6 +57,7 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                     setFormState({ ...formState, answer: e.target.value})
                 }}
                 />
+                <h3>Answer Options</h3>
                 <input
                 type="text"
                 placeholder="Choice A"
@@ -107,6 +108,7 @@ export default function QuestionForm({ questions, handlePrevious, handleNewQuest
                         <h3>Question {index + 1}:</h3>
                         <p className="store-p">Question: {oneItem.question}</p>
                         <p className="store-p">Answer: {oneItem.choices[oneItem.answer]}</p>
+                        
                         <p className="store-p">Choice A: {oneItem.choices[0]}</p>
                         <p className="store-p">Choice B: {oneItem.choices[1]}</p>
                         <p className="store-p">Choice C: {oneItem.choices[2]}</p>
