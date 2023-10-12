@@ -15,6 +15,7 @@ import Countdown from './components/CountdownStuff/Countdown';
 import NewCountdown from './components/CountdownStuff/NewCountdown';
 import CountdownList from './components/CountdownStuff/CountdownList';
 import Quizzer from './components/Academy/Quizzer/Quizzer';
+import Quizzes from './components/Academy/Quizzer/Quizzes';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -138,6 +139,7 @@ function App() {
         <Route path='/academy/journal/' element={<SchoolJournal />} />
         <Route path='/academy/journal/new' element={<NewJournal />} />
         <Route path='/academy/quizzer' element={<Quizzer  />} />
+        <Route path='/academy/quizzes' element={<Quizzes  />} />
         <Route path='/academy' element={<Academy />} />
         <Route path='/kiara' element={<Kiara />} />
         <Route path='/' element={<Trav />} />
