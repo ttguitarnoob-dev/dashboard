@@ -16,6 +16,7 @@ import NewCountdown from './components/CountdownStuff/NewCountdown';
 import CountdownList from './components/CountdownStuff/CountdownList';
 import Quizzer from './components/Academy/Quizzer/Quizzer';
 import Quizzes from './components/Academy/Quizzer/Quizzes';
+import Contact from './components/Contact';
 // import Prodigy from './components/Prodigy';
 
 function App() {
@@ -149,6 +150,7 @@ function App() {
         <Route path='/countdown/:id' element={<Countdown HandleDelete={HandleDelete} />} />
         <Route path='/countdown' element={<CountdownList />} />
         <Route path='/task-random' element={<TaskRandom />} />
+        <Route path='/majestic-requests' element={<Contact />} />
       </Routes>
     </div>
 

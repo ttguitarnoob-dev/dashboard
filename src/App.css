@@ -362,3 +362,10 @@ label {
   padding: 2rem;
 }
 
+.customer-message {
+  background-color: rgb(189, 141, 189);
+  padding: 2rem;
+  margin-top: 1rem;
+  border: 1px solid black;
+  border-radius: 20px;
+}
